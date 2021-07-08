@@ -1,4 +1,6 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:water/ui/word.dart';
 
 class ReservoirPage extends StatefulWidget {
   const ReservoirPage({Key? key}) : super(key: key);
@@ -18,7 +20,7 @@ class _ReservoirPageState extends State<ReservoirPage> {
     return Scaffold(
       appBar: AppBar(
         leading: Padding(
-          padding: EdgeInsets.all(8.0),
+          padding: EdgeInsets.all(HEADPADDING),
           child:
           Container(
             decoration: BoxDecoration(
@@ -30,13 +32,13 @@ class _ReservoirPageState extends State<ReservoirPage> {
             ),
           ),
         ),
-        title: Text(
-          '水库',
-          style: TextStyle(
-            fontSize: 20.0,
-          ),
-        ),
-        centerTitle: true,
+        title: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: <Widget>[
+            Text('1级水库',style: TextStyle(fontSize: 12.0,color: Colors.black),),
+            Text('当前伤害值：50',style: TextStyle(fontSize: 12.0,color: Colors.black),),
+          ],
+        )
       ),
       body: Column(
         children: [

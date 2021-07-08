@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:water/pages/social/editArticalPage.dart';
+import 'package:water/ui/word.dart';
 import 'FriendListPage.dart';
 import 'package:water/views/social/articleList.dart';
 
@@ -22,7 +23,7 @@ class _SocialContactPageState extends State<SocialContactPage> {
     return Scaffold(
       appBar: AppBar(
         leading: Padding(
-          padding: EdgeInsets.all(8.0),
+          padding: EdgeInsets.all(HEADPADDING),
           child:
           Container(
             decoration: BoxDecoration(
@@ -37,7 +38,7 @@ class _SocialContactPageState extends State<SocialContactPage> {
         title: Text(
           '社交',
           style: TextStyle(
-            fontSize: 20.0,
+            fontSize: APPBARTITLE,
           ),
         ),
         centerTitle: true,

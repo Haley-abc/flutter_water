@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:water/ui/word.dart';
 import 'package:water/views/water/settingList.dart';
 
 class RepairPage extends StatefulWidget {
@@ -21,7 +22,7 @@ class _RepairPageState extends State<RepairPage> {
         title: Text(
             '报修服务',
           style: TextStyle(
-            fontSize: 17.0,
+            fontSize: APPBARTITLE,
           ),
         ),
         centerTitle: true,
