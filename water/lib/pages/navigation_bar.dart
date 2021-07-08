@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import 'rankingListPage.dart';
+import 'package:water/pages/reservoir/reservoirPage.dart';
+import 'package:water/pages/service/servicePage.dart';
+import 'ranking/rankingListPage.dart';
 import 'social/socialContactPage.dart';
 import 'water/waterPage.dart';
 
@@ -31,6 +33,8 @@ class _NavigationPageState extends State<NavigationPage>{
           WaterPage(),
           RankingListPage(),
           SocialContactPage(),
+          ServicePage(),
+          ReservoirPage()
         ],
       ),
       bottomNavigationBar: BottomNavigationBar(
@@ -46,6 +50,14 @@ class _NavigationPageState extends State<NavigationPage>{
           BottomNavigationBarItem(
               icon: Icon(Icons.people),
               title: Text('社交')
+          ),
+          BottomNavigationBarItem(
+              icon: Icon(Icons.room_service),
+              title: Text('服务')
+          ),
+          BottomNavigationBarItem(
+              icon: Icon(Icons.games),
+              title: Text('水库')
           ),
         ],
         currentIndex: _currentIndex,// 当前选中项的索引
