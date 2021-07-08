@@ -10,6 +10,6 @@ class ClassesPage extends StatefulWidget {
 class _ClassesPageState extends State<ClassesPage> {
   @override
   Widget build(BuildContext context) {
-    return Text('课程开设');
+    return Text('课程开设开发中');
   }
 }

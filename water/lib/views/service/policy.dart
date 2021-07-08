@@ -10,6 +10,6 @@ class PolicyPage extends StatefulWidget {
 class _PolicyPageState extends State<PolicyPage> {
   @override
   Widget build(BuildContext context) {
-    return Text('政策解读');
+    return Text('政策解读开发中');
   }
 }
