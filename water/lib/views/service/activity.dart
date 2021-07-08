@@ -10,6 +10,6 @@ class ActivityPage extends StatefulWidget {
 class _ActivityPageState extends State<ActivityPage> {
   @override
   Widget build(BuildContext context) {
-    return Text('活动宣传');
+    return Text('活动宣传开发中');
   }
 }

@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:water/views/water/settingList.dart';
 
-class SettingPage extends StatefulWidget {
-  const SettingPage({Key? key}) : super(key: key);
+class RepairPage extends StatefulWidget {
+  const RepairPage({Key? key}) : super(key: key);
 
   @override
-  _SettingPageState createState() {
-    return _SettingPageState();
+  _RepairPageState createState() {
+    return _RepairPageState();
   }
 }
 
-class _SettingPageState extends State<SettingPage> {
+class _RepairPageState extends State<RepairPage> {
   @override
   Widget build(BuildContext context) {
     double width = MediaQuery.of(context).size.width;
@@ -19,23 +19,17 @@ class _SettingPageState extends State<SettingPage> {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-            '设置',
+            '报修服务',
           style: TextStyle(
             fontSize: 17.0,
           ),
         ),
         centerTitle: true,
-        actions: [
-          IconButton(
-            onPressed: () {
-            },
-            icon: Image(
-              image: AssetImage("assets/icon/logout.png"),
-            ),
-          ),
-        ],
       ),
-      body: SettingList(),
+      body: Container(
+        alignment: Alignment.center,
+        child: Text('暂未开放'),
+      ),
     );
   }
 }

@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:water/pages/social/editArticalPage.dart';
 import 'FriendListPage.dart';
 import 'package:water/views/social/articleList.dart';
 
@@ -42,7 +43,9 @@ class _SocialContactPageState extends State<SocialContactPage> {
         centerTitle: true,
         actions: [
           IconButton(
-            onPressed: () {},
+            onPressed: () {
+              Navigator.push(context, MaterialPageRoute(builder: (context)=>EditArticaltPage()));
+            },
             icon: Image(
               image: AssetImage("assets/icon/add.png"),
             ),

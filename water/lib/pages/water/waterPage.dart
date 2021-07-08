@@ -52,7 +52,14 @@ class _WaterPageState extends State<WaterPage> {
         children: [
           Container(
             width: width,
-            height: height,
+            height: 60.0,
+            alignment: Alignment.center,
+            child: Text(
+                '今日用水量  0.0 L',
+              style: TextStyle(
+                fontSize: 25.0
+              ),
+            ),
           ),
         ],
       ),

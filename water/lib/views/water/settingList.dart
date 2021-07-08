@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:water/pages/water/setting/personalInformation.dart';
+import 'package:water/pages/water/setting/repairPage.dart';
 
 class SettingList extends StatefulWidget {
   @override
@@ -8,18 +10,26 @@ class SettingList extends StatefulWidget {
 }
 
 class _SettingListState extends State<SettingList> {
-  final List<String> name = ['账号管理', '保修服务', '注销'];
+  final List<String> name = ['编辑资料', '报修服务'];
 
   @override
   Widget build(BuildContext context) {
     return ListView.builder(
-      itemCount: 3,
+      itemCount: 2,
       itemBuilder: (context, index) {
         return Column(
           children: <Widget>[
             ListTile(
               title: Text(name[index]),
               trailing: Icon(Icons.arrow_forward_ios_rounded),
+                onTap:(){
+                  Navigator.push(context,
+                      //push跳转页面时，通过构造方法传递数据
+                      MaterialPageRoute(
+                          builder:(context) => skip(name[index]),
+                      )
+                  );
+                }
             ),
             Divider(
               color: Colors.grey,
@@ -28,5 +38,14 @@ class _SettingListState extends State<SettingList> {
         );
       },
     );
+  }
+
+  skip(String choice){
+    switch(choice){
+      case '编辑资料':
+        return PersonalInformationPage();
+      case '报修服务':
+        return RepairPage();
+    }
   }
 }
