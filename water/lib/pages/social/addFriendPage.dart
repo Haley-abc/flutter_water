@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:water/ui/word.dart';
 
 class AddFriendPage extends StatefulWidget {
   const AddFriendPage({Key? key}) : super(key: key);
@@ -20,7 +21,7 @@ class _AddFriendPageState extends State<AddFriendPage> {
         title: Text(
           '找人',
           style: TextStyle(
-            fontSize: 20.0,
+            fontSize: APPBARTITLE,
           ),
         ),
         centerTitle: true,

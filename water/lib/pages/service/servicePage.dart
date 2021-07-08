@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:water/ui/word.dart';
 import 'package:water/views/service/activity.dart';
 import 'package:water/views/service/class.dart';
 import 'package:water/views/service/knowledge.dart';
@@ -23,7 +24,7 @@ class _ServicePageState extends State<ServicePage> {
     return Scaffold(
       appBar: AppBar(
         leading: Padding(
-          padding: EdgeInsets.all(8.0),
+          padding: EdgeInsets.all(HEADPADDING),
           child:
           Container(
             decoration: BoxDecoration(
@@ -38,7 +39,7 @@ class _ServicePageState extends State<ServicePage> {
         title: Text(
           '服务',
           style: TextStyle(
-            fontSize: 20.0,
+            fontSize: APPBARTITLE,
           ),
         ),
         centerTitle: true,

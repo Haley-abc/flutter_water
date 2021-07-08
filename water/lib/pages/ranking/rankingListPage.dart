@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
+import 'package:water/ui/word.dart';
 import 'package:water/views/list/rankList.dart';
 
 class RankingListPage extends StatefulWidget {
@@ -21,7 +22,7 @@ class _RankingListPageState extends State<RankingListPage> {
     return Scaffold(
         appBar: AppBar(
           leading: Padding(
-            padding: EdgeInsets.all(8.0),
+            padding: EdgeInsets.all(HEADPADDING),
             child: Container(
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(150),
@@ -35,7 +36,7 @@ class _RankingListPageState extends State<RankingListPage> {
           title: Text(
             resultMessage,
             style: TextStyle(
-              fontSize: 20.0,
+              fontSize: APPBARTITLE,
             ),
           ),
           centerTitle: true,
@@ -130,16 +131,8 @@ class _RankingListPageState extends State<RankingListPage> {
       child: Container(
         height: 40,
         //左右排开的线性布局
-        child: Row(
-          //所有的子Widget 水平方向居中
-          mainAxisAlignment: MainAxisAlignment.center,
-          //所有的子Widget 竖直方向居中
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            SizedBox(width: 10,),
-            Text(title)
-          ],
-        ),
+        child: Text(title),
+        alignment: Alignment.center,
       ),
     );
   }

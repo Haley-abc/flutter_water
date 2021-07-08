@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:water/ui/word.dart';
 import 'package:water/views/water/settingList.dart';
 
 class PersonalInformationPage extends StatefulWidget {
@@ -21,7 +22,7 @@ class _PersonalInformationPageState extends State<PersonalInformationPage> {
         title: Text(
             '编辑资料',
           style: TextStyle(
-            fontSize: 17.0,
+            fontSize: APPBARTITLE,
           ),
         ),
         centerTitle: true,

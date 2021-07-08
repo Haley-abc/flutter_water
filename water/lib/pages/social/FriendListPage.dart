@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:water/ui/word.dart';
 import 'addFriendPage.dart';
 import 'package:water/views/social/friendList.dart';
 
@@ -22,7 +23,7 @@ class _FriendListPageState extends State<FriendListPage> {
         title: Text(
           '好友',
           style: TextStyle(
-            fontSize: 20.0,
+            fontSize: APPBARTITLE,
           ),
         ),
         actions: [
