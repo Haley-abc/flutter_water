@@ -31,7 +31,7 @@ class _RankingListPageState extends State<RankingListPage> {
             ),
           ),
           title: Text(
-            '区域日榜',
+            '好友日榜',
             style: TextStyle(
               fontSize: 20.0,
             ),
