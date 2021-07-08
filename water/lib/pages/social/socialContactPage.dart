@@ -1,15 +1,18 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'FriendListPage.dart';
+import 'package:water/views/social/articleList.dart';
 
-class WaterPage extends StatefulWidget {
-  const WaterPage({Key? key}) : super(key: key);
+class SocialContactPage extends StatefulWidget {
+  const SocialContactPage({Key? key}) : super(key: key);
 
   @override
-  _WaterPageState createState() {
-    return _WaterPageState();
+  _SocialContactPageState createState() {
+    return _SocialContactPageState();
   }
 }
 
-class _WaterPageState extends State<WaterPage> {
+class _SocialContactPageState extends State<SocialContactPage> {
   @override
   Widget build(BuildContext context) {
     double width = MediaQuery.of(context).size.width;
@@ -31,28 +34,33 @@ class _WaterPageState extends State<WaterPage> {
           ),
         ),
         title: Text(
-            'Haley',
+          '社交',
           style: TextStyle(
-            fontSize: 17.0,
+            fontSize: 20.0,
           ),
         ),
+        centerTitle: true,
         actions: [
           IconButton(
             onPressed: () {},
             icon: Image(
-              image: AssetImage("assets/icon/setting.png"),
+              image: AssetImage("assets/icon/add.png"),
+            ),
+          ),
+          IconButton(
+            onPressed: () {
+              Navigator.push(context, MaterialPageRoute(builder: (context)=>FriendListPage()));
+            },
+            icon: Image(
+              image: AssetImage("assets/icon/friends.png"),
             ),
           )
         ],
       ),
-      body: Column(
-        children: [
-          Container(
-            width: width,
-            height: height,
-          ),
-        ],
-      ),
+      body: Container(
+        margin: EdgeInsets.only(top: 10.0),
+        child: ArticalList(),
+      )
     );
   }
 }

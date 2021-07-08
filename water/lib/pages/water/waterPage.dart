@@ -1,18 +1,16 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:water/pages/FriendListPage.dart';
-import 'package:water/views/social/articleList.dart';
+import 'setting/settingPage.dart';
 
-class SocialContactPage extends StatefulWidget {
-  const SocialContactPage({Key? key}) : super(key: key);
+class WaterPage extends StatefulWidget {
+  const WaterPage({Key? key}) : super(key: key);
 
   @override
-  _SocialContactPageState createState() {
-    return _SocialContactPageState();
+  _WaterPageState createState() {
+    return _WaterPageState();
   }
 }
 
-class _SocialContactPageState extends State<SocialContactPage> {
+class _WaterPageState extends State<WaterPage> {
   @override
   Widget build(BuildContext context) {
     double width = MediaQuery.of(context).size.width;
@@ -34,33 +32,30 @@ class _SocialContactPageState extends State<SocialContactPage> {
           ),
         ),
         title: Text(
-          '社交',
+            'Haley',
           style: TextStyle(
-            fontSize: 20.0,
+            fontSize: 17.0,
           ),
         ),
-        centerTitle: true,
         actions: [
           IconButton(
-            onPressed: () {},
-            icon: Image(
-              image: AssetImage("assets/icon/add.png"),
-            ),
-          ),
-          IconButton(
             onPressed: () {
-              Navigator.push(context, MaterialPageRoute(builder: (context)=>FriendListPage()));
+              Navigator.push(context, MaterialPageRoute(builder: (context)=>SettingPage()));
             },
             icon: Image(
-              image: AssetImage("assets/icon/friends.png"),
+              image: AssetImage("assets/icon/setting.png"),
             ),
           )
         ],
       ),
-      body: Container(
-        margin: EdgeInsets.only(top: 10.0),
-        child: ArticalList(),
-      )
+      body: Column(
+        children: [
+          Container(
+            width: width,
+            height: height,
+          ),
+        ],
+      ),
     );
   }
 }

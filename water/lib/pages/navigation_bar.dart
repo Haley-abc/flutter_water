@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'rankingListPage.dart';
-import 'socialContactPage.dart';
-import 'waterPage.dart';
+import 'social/socialContactPage.dart';
+import 'water/waterPage.dart';
 
 class NavigationBarDemo extends StatelessWidget {
   @override

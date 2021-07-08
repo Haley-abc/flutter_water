@@ -6,7 +6,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:water/pages/navigation_bar.dart';
 import 'package:fluttertoast/fluttertoast.dart';
-import 'package:shake_animation_widget/shake_animation_widget.dart';
 
 class LoginPage extends StatefulWidget {
   @override
@@ -49,6 +48,9 @@ class _LoginPageState extends State<LoginPage> {
           //线性布局
           child: Column(
             children: [
+              SizedBox(
+                height: 30,
+              ),
               Container(
                 height: 160.0,
                 width: 160.0,
