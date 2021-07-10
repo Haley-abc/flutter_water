@@ -147,7 +147,7 @@ class _LoginPageState extends State<LoginPage> {
 
   void checkLoginFunction() {
     hindKeyBoarder();
-    loginFunction();
+    actionStart();
   }
 
   void actionStart() async {
@@ -168,12 +168,14 @@ class _LoginPageState extends State<LoginPage> {
 
   loginFunction() async {
     BaseOptions options = new BaseOptions(
-      baseUrl: "http://10.0.2.2:8080/demo/user/queryById?id=1",
-      connectTimeout: 50000
-    );
+        baseUrl: "http://10.0.2.2:8080/demo/user/queryById?id=1",
+        connectTimeout: 50000);
     Dio dio = new Dio(options);
-    dio.get("http://10.0.2.2:8080/demo/user/queryById?id=1").then((value) => print(value.toString()));
-}
+    dio.get("http://10.0.2.2:8080/demo/user/queryById?id=1").then((value) {
+      print(value.toString());
+      Fluttertoast.showToast(msg: value.toString());
+    });
+  }
 }
 
 class RowWidget extends StatelessWidget {

@@ -16,13 +16,19 @@ class RegisterPage extends StatefulWidget {
 }
 
 class _RegisterPageState extends State<RegisterPage> {
+
   //用户名输入框的焦点控制
+  FocusNode _userPhoneFocusNode = new FocusNode();
   FocusNode _userNameFocusNode = new FocusNode();
   FocusNode _passwordFocusNode = new FocusNode();
+  FocusNode _sureFocusNode = new FocusNode();
+
 
   //文本输入框控制器
+  TextEditingController _userPhoneController = new TextEditingController();
   TextEditingController _userNameController = new TextEditingController();
   TextEditingController _passwordController = new TextEditingController();
+  TextEditingController _sureController = new TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -51,16 +57,23 @@ class _RegisterPageState extends State<RegisterPage> {
           //线性布局
           child: Column(
             children: [
-              SizedBox(
-                height: 30,
-              ),
               //用户名输入框
+              buildUserPhoneWidget(),
+              SizedBox(
+                height: 15,
+              ),
+              //用户密码输入框
               buildUserNameWidget(),
               SizedBox(
                 height: 15,
               ),
               //用户密码输入框
               buildUserPasswordWidget(),
+              SizedBox(
+                height: 15,
+              ),
+              //用户密码输入框
+              buildSureWidget(),
               SizedBox(height: 15),
               //登录按钮
               Container(
@@ -86,7 +99,47 @@ class _RegisterPageState extends State<RegisterPage> {
     );
   }
 
+  Widget buildUserPhoneWidget() {
+    return TextField(
+      //焦点控制
+      focusNode: _userPhoneFocusNode,
+      //文本控制器
+      controller: _userPhoneController,
+      //键盘回车键点击回调
+      //边框样式设置
+      decoration: InputDecoration(
+        //红色的错误提示文本
+        labelText: "手机号",
+        //设置上下左右 都有边框
+        //设置四个角的弧度
+        border: OutlineInputBorder(
+          //设置边框四个角的弧度
+          borderRadius: BorderRadius.all(Radius.circular(40)),
+        ),
+      ),
+    );
+  }
+
+  Widget buildUserNameWidget() {
+    return TextField(
+      focusNode: _userNameFocusNode,
+      controller: _userNameController,
+      //隐藏输入的文本
+      obscureText: true,
+      //最大可输入1行
+      maxLines: 1,
+      //边框样式设置
+      decoration: InputDecoration(
+        labelText: "昵称",
+        border: OutlineInputBorder(
+          borderRadius: BorderRadius.all(Radius.circular(40)),
+        ),
+      ),
+    );
+  }
+
   Widget buildUserPasswordWidget() {
+    String errorText;
     return TextField(
       focusNode: _passwordFocusNode,
       controller: _passwordController,
@@ -104,29 +157,28 @@ class _RegisterPageState extends State<RegisterPage> {
     );
   }
 
-  ///用户名输入框 Stream 局部更新 error提示
-  ///     ShakeAnimationWidget 抖动动画
-  ///
-  Widget buildUserNameWidget() {
+  Widget buildSureWidget() {
     return TextField(
-      //焦点控制
-      focusNode: _userNameFocusNode,
-      //文本控制器
-      controller: _userNameController,
-      //键盘回车键点击回调
+      focusNode: _sureFocusNode,
+      controller: _sureController,
+      //隐藏输入的文本
+      obscureText: true,
+      //最大可输入1行
+      maxLines: 1,
       //边框样式设置
       decoration: InputDecoration(
-        //红色的错误提示文本
-        labelText: "用户名",
-        //设置上下左右 都有边框
-        //设置四个角的弧度
+        labelText: "确认密码",
         border: OutlineInputBorder(
-          //设置边框四个角的弧度
           borderRadius: BorderRadius.all(Radius.circular(40)),
         ),
       ),
     );
   }
+
+
+  ///用户名输入框 Stream 局部更新 error提示
+  ///     ShakeAnimationWidget 抖动动画
+  ///
 
   void checkLoginFunction() {
     hindKeyBoarder();
@@ -141,8 +193,10 @@ class _RegisterPageState extends State<RegisterPage> {
 
   void hindKeyBoarder() {
     //输入框失去焦点
+    _userPhoneFocusNode.unfocus();
     _userNameFocusNode.unfocus();
     _passwordFocusNode.unfocus();
+    _sureFocusNode.unfocus();
 
     //隐藏键盘
     SystemChannels.textInput.invokeMethod('TextInput.hide');
