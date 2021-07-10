@@ -5,18 +5,17 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:water/login/regist.dart';
 import 'package:water/network/http_config.dart';
 import 'package:water/network/http_request.dart';
 import 'package:water/pages/navigation_bar.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 
-class LoginPage extends StatefulWidget {
+class RegisterPage extends StatefulWidget {
   @override
-  _LoginPageState createState() => _LoginPageState();
+  _RegisterPageState createState() => _RegisterPageState();
 }
 
-class _LoginPageState extends State<LoginPage> {
+class _RegisterPageState extends State<RegisterPage> {
   //用户名输入框的焦点控制
   FocusNode _userNameFocusNode = new FocusNode();
   FocusNode _passwordFocusNode = new FocusNode();
@@ -34,7 +33,7 @@ class _LoginPageState extends State<LoginPage> {
       }, //点击事件
       child: Scaffold(
         appBar: AppBar(
-          title: Text("登录"),
+          title: Text("注册"),
           centerTitle: true,
         ),
         //登录页面的主体
@@ -55,20 +54,6 @@ class _LoginPageState extends State<LoginPage> {
               SizedBox(
                 height: 30,
               ),
-              Container(
-                height: 160.0,
-                width: 160.0,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(150),
-                  image: DecorationImage(
-                    fit: BoxFit.cover,
-                    image: AssetImage('assets/images/head1.png'),
-                  ),
-                ),
-              ),
-              SizedBox(
-                height: 60,
-              ),
               //用户名输入框
               buildUserNameWidget(),
               SizedBox(
@@ -83,7 +68,7 @@ class _LoginPageState extends State<LoginPage> {
                 height: 50,
                 child: ElevatedButton(
                   child: Text(
-                    "登录",
+                    "注册",
                     style: TextStyle(fontSize: 20),
                   ),
                   onPressed: () {
@@ -91,8 +76,6 @@ class _LoginPageState extends State<LoginPage> {
                   },
                 ),
               ),
-              SizedBox(height: 20),
-              RowWidget(),
               SizedBox(
                 height: 60,
               ),
@@ -147,7 +130,6 @@ class _LoginPageState extends State<LoginPage> {
 
   void checkLoginFunction() {
     hindKeyBoarder();
-    loginFunction();
   }
 
   void actionStart() async {
@@ -166,59 +148,4 @@ class _LoginPageState extends State<LoginPage> {
     SystemChannels.textInput.invokeMethod('TextInput.hide');
   }
 
-  loginFunction() async {
-    BaseOptions options = new BaseOptions(
-      baseUrl: "http://10.0.2.2:8080/demo/user/queryById?id=1",
-      connectTimeout: 50000
-    );
-    Dio dio = new Dio(options);
-    dio.get("http://10.0.2.2:8080/demo/user/queryById?id=1").then((value) => print(value.toString()));
-}
-}
-
-class RowWidget extends StatelessWidget {
-  const RowWidget({
-    Key? key,
-  }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      child: Row(
-        children: <Widget>[
-          Expanded(
-            child: RichText(
-              text: TextSpan(children: [
-                TextSpan(
-                    text: '注册',
-                    style: TextStyle(fontSize: 15, color: Colors.lightBlue),
-                    recognizer: TapGestureRecognizer()
-                      ..onTap = () {
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => RegisterPage()));
-                      })
-              ]),
-              textAlign: TextAlign.center,
-            ),
-          ),
-          Expanded(
-            child: RichText(
-              text: TextSpan(children: [
-                TextSpan(
-                    text: '忘记密码？',
-                    style: TextStyle(fontSize: 15, color: Colors.lightBlue),
-                    recognizer: TapGestureRecognizer()
-                      ..onTap = () {
-                        Fluttertoast.showToast(msg: '好气哦，我也不记得了！');
-                      })
-              ]),
-              textAlign: TextAlign.center,
-            ),
-          )
-        ],
-      ),
-    );
-  }
 }
