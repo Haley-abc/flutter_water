@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:water/ui/word.dart';
+import 'setting/settingPage.dart';
 
 class WaterPage extends StatefulWidget {
   const WaterPage({Key? key}) : super(key: key);
@@ -18,7 +20,7 @@ class _WaterPageState extends State<WaterPage> {
     return Scaffold(
       appBar: AppBar(
         leading: Padding(
-          padding: EdgeInsets.all(8.0),
+          padding: EdgeInsets.all(HEADPADDING),
           child:
           Container(
             decoration: BoxDecoration(
@@ -33,12 +35,15 @@ class _WaterPageState extends State<WaterPage> {
         title: Text(
             'Haley',
           style: TextStyle(
-            fontSize: 17.0,
+            fontSize: 14.0,
+            color: Colors.black
           ),
         ),
         actions: [
           IconButton(
-            onPressed: () {},
+            onPressed: () {
+              Navigator.push(context, MaterialPageRoute(builder: (context)=>SettingPage()));
+            },
             icon: Image(
               image: AssetImage("assets/icon/setting.png"),
             ),
@@ -49,7 +54,15 @@ class _WaterPageState extends State<WaterPage> {
         children: [
           Container(
             width: width,
-            height: height,
+            height: 60.0,
+            alignment: Alignment.center,
+            child: Text(
+                '今日用水量  0.0 L',
+              style: TextStyle(
+                fontSize: 25.0,
+                color: Colors.grey
+              ),
+            ),
           ),
         ],
       ),
