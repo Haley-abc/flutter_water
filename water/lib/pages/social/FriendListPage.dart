@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:water/views/list/rankList.dart';
+import 'package:water/ui/word.dart';
+import 'addFriendPage.dart';
+import 'package:water/views/social/friendList.dart';
 
 class FriendListPage extends StatefulWidget {
   const FriendListPage({Key? key}) : super(key: key);
@@ -21,12 +23,22 @@ class _FriendListPageState extends State<FriendListPage> {
         title: Text(
           '好友',
           style: TextStyle(
-            fontSize: 20.0,
+            fontSize: APPBARTITLE,
           ),
         ),
+        actions: [
+          IconButton(
+            onPressed: () {
+              Navigator.push(context, MaterialPageRoute(builder: (context)=>AddFriendPage()));
+            },
+            icon: Image(
+              image: AssetImage("assets/icon/add_friend.png"),
+            ),
+          ),
+        ],
         centerTitle: true,
       ),
-        body: RankList(),
+        body: FriendList(),
     );
   }
 }

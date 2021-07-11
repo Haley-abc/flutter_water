@@ -1,12 +1,14 @@
 import 'dart:async';
 
+import 'package:dio/dio.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:water/login/regist.dart';
+import 'package:water/network/data_model.dart';
 import 'package:water/pages/navigation_bar.dart';
 import 'package:fluttertoast/fluttertoast.dart';
-import 'package:shake_animation_widget/shake_animation_widget.dart';
 
 class LoginPage extends StatefulWidget {
   @override
@@ -21,6 +23,9 @@ class _LoginPageState extends State<LoginPage> {
   //文本输入框控制器
   TextEditingController _userNameController = new TextEditingController();
   TextEditingController _passwordController = new TextEditingController();
+
+  //从数据库获得的密码
+  String password="1";
 
   @override
   Widget build(BuildContext context) {
@@ -49,6 +54,10 @@ class _LoginPageState extends State<LoginPage> {
           //线性布局
           child: Column(
             children: [
+              SizedBox(
+                height: 30,
+              ),
+              //用户头像
               Container(
                 height: 160.0,
                 width: 160.0,
@@ -63,7 +72,7 @@ class _LoginPageState extends State<LoginPage> {
               SizedBox(
                 height: 60,
               ),
-              //用户名输入框
+              //用户手机号输入框
               buildUserNameWidget(),
               SizedBox(
                 height: 15,
@@ -97,6 +106,9 @@ class _LoginPageState extends State<LoginPage> {
     );
   }
 
+  /**
+   * 创建密码框组件
+   */
   Widget buildUserPasswordWidget() {
     return TextField(
       focusNode: _passwordFocusNode,
@@ -115,20 +127,19 @@ class _LoginPageState extends State<LoginPage> {
     );
   }
 
-  ///用户名输入框 Stream 局部更新 error提示
-  ///     ShakeAnimationWidget 抖动动画
-  ///
+  /**
+   * 创建手机框组件
+   */
   Widget buildUserNameWidget() {
     return TextField(
       //焦点控制
       focusNode: _userNameFocusNode,
       //文本控制器
       controller: _userNameController,
-      //键盘回车键点击回调
       //边框样式设置
       decoration: InputDecoration(
         //红色的错误提示文本
-        labelText: "用户名",
+        labelText: "手机",
         //设置上下左右 都有边框
         //设置四个角的弧度
         border: OutlineInputBorder(
@@ -139,18 +150,30 @@ class _LoginPageState extends State<LoginPage> {
     );
   }
 
+  /**
+   * 检查账号密码
+   */
   void checkLoginFunction() {
+    String passwordController=_passwordController.text;
     hindKeyBoarder();
-    actionStart();
+    if(password==passwordController){
+      actionStart();
+    }else{
+      Fluttertoast.showToast(msg: "账号或密码不存在！");
+    }
   }
 
-  void actionStart() async {
-    await Future.delayed(Duration(seconds: 2), () {
+  /**
+   * 跳转到主页
+   */
+  void actionStart(){
       Navigator.push(context,
           MaterialPageRoute(builder: (context) => NavigationBarDemo()));
-    });
   }
 
+  /**
+   * 隐藏键盘
+   */
   void hindKeyBoarder() {
     //输入框失去焦点
     _userNameFocusNode.unfocus();
@@ -159,8 +182,24 @@ class _LoginPageState extends State<LoginPage> {
     //隐藏键盘
     SystemChannels.textInput.invokeMethod('TextInput.hide');
   }
+
+  /**
+   * http
+   */
+  loginFunction() async{
+    String phoneController=_userNameController.text;
+    BaseOptions options = new BaseOptions(
+        baseUrl: "http://10.0.2.2:8080/demo/user/queryByPhone",
+        connectTimeout: 50000);
+    Dio dio = new Dio(options);
+    var response=await dio.get("http://10.0.2.2:8080/demo/user/queryByPhone",queryParameters: {"phone":phoneController});
+    password=response.data["password"];
+  }
 }
 
+/**
+ * 注册和忘记密码
+ */
 class RowWidget extends StatelessWidget {
   const RowWidget({
     Key? key,
@@ -182,7 +221,7 @@ class RowWidget extends StatelessWidget {
                         Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => NavigationBarDemo()));
+                                builder: (context) => RegisterPage()));
                       })
               ]),
               textAlign: TextAlign.center,
