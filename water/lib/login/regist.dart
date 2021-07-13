@@ -5,6 +5,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:water/login/login.dart';
 import 'package:water/network/http_config.dart';
 import 'package:water/network/http_request.dart';
 import 'package:water/pages/navigation_bar.dart';
@@ -22,6 +23,7 @@ class _RegisterPageState extends State<RegisterPage> {
   FocusNode _userNameFocusNode = new FocusNode();
   FocusNode _passwordFocusNode = new FocusNode();
   FocusNode _sureFocusNode = new FocusNode();
+  FocusNode _sexFocusNode = new FocusNode();
 
 
   //文本输入框控制器
@@ -29,6 +31,7 @@ class _RegisterPageState extends State<RegisterPage> {
   TextEditingController _userNameController = new TextEditingController();
   TextEditingController _passwordController = new TextEditingController();
   TextEditingController _sureController = new TextEditingController();
+  TextEditingController _sexController = new TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -42,7 +45,7 @@ class _RegisterPageState extends State<RegisterPage> {
           title: Text("注册"),
           centerTitle: true,
         ),
-        //登录页面的主体
+        //注册页面的主体
         body: buildLoginWidget(),
       ),
     );
@@ -57,13 +60,18 @@ class _RegisterPageState extends State<RegisterPage> {
           //线性布局
           child: Column(
             children: [
-              //用户名输入框
+              //手机号输入框
               buildUserPhoneWidget(),
               SizedBox(
                 height: 15,
               ),
-              //用户密码输入框
+              //用户昵称输入框
               buildUserNameWidget(),
+              SizedBox(
+                height: 15,
+              ),
+              //用户性别输入框
+              buildSexWidget(),
               SizedBox(
                 height: 15,
               ),
@@ -72,10 +80,10 @@ class _RegisterPageState extends State<RegisterPage> {
               SizedBox(
                 height: 15,
               ),
-              //用户密码输入框
+              //确认密码输入框
               buildSureWidget(),
               SizedBox(height: 15),
-              //登录按钮
+              //注册按钮
               Container(
                 width: double.infinity,
                 height: 50,
@@ -85,7 +93,7 @@ class _RegisterPageState extends State<RegisterPage> {
                     style: TextStyle(fontSize: 20),
                   ),
                   onPressed: () {
-                    checkLoginFunction();
+                    checkPassword();
                   },
                 ),
               ),
@@ -124,8 +132,6 @@ class _RegisterPageState extends State<RegisterPage> {
     return TextField(
       focusNode: _userNameFocusNode,
       controller: _userNameController,
-      //隐藏输入的文本
-      obscureText: true,
       //最大可输入1行
       maxLines: 1,
       //边框样式设置
@@ -175,19 +181,44 @@ class _RegisterPageState extends State<RegisterPage> {
     );
   }
 
+  /**
+   * 性别输入框
+   */
+  Widget buildSexWidget() {
+    return TextField(
+      focusNode: _sexFocusNode,
+      controller: _sexController,
+      //最大可输入1行
+      maxLines: 1,
+      //边框样式设置
+      decoration: InputDecoration(
+        labelText: "性别",
+        border: OutlineInputBorder(
+          borderRadius: BorderRadius.all(Radius.circular(40)),
+        ),
+      ),
+    );
+  }
+
 
   ///用户名输入框 Stream 局部更新 error提示
   ///     ShakeAnimationWidget 抖动动画
   ///
 
-  void checkLoginFunction() {
-    hindKeyBoarder();
+  void checkPassword() {
+    String password=_passwordController.text;
+    String sure=_sureController.text;
+    if(password==sure){
+      registFunction();
+    }else{
+      Fluttertoast.showToast(msg: "两次密码不一致！");
+    }
   }
 
   void actionStart() async {
     await Future.delayed(Duration(seconds: 2), () {
       Navigator.push(context,
-          MaterialPageRoute(builder: (context) => NavigationBarDemo()));
+          MaterialPageRoute(builder: (context) => LoginPage()));
     });
   }
 
@@ -202,4 +233,26 @@ class _RegisterPageState extends State<RegisterPage> {
     SystemChannels.textInput.invokeMethod('TextInput.hide');
   }
 
+  void registFunction() async{
+    String phoneController=_userPhoneController.text;
+    String nameController=_userNameController.text;
+    String passwordController=_passwordController.text;
+    String sexController=_sexController.text;
+    BaseOptions options = new BaseOptions(
+        baseUrl: "http://47.97.192.128:8080/demo/user",
+        connectTimeout: 50000);
+    Dio dio = new Dio(options);
+    var response=await dio.get("/queryByPhone",queryParameters: {"phone":phoneController});
+    if(response.toString()!=""){
+      Fluttertoast.showToast(msg: "账号已存在！");
+    }else{
+      var response2=await dio.post("/saveOne",data: {"phone":phoneController,"name":nameController,"password":passwordController,"sex":sexController});
+      String message=response2.data["message"];
+      if(message=="保存成功"){
+        Fluttertoast.showToast(msg: "注册成功！");
+      }else{
+        Fluttertoast.showToast(msg: "注册失败！");
+      }
+    }
+  }
 }
