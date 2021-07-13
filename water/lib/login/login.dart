@@ -6,7 +6,6 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:water/login/regist.dart';
-import 'package:water/network/data_model.dart';
 import 'package:water/pages/navigation_bar.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 
@@ -90,7 +89,7 @@ class _LoginPageState extends State<LoginPage> {
                     style: TextStyle(fontSize: 20),
                   ),
                   onPressed: () {
-                    checkLoginFunction();
+                    loginFunction();
                   },
                 ),
               ),
@@ -154,13 +153,8 @@ class _LoginPageState extends State<LoginPage> {
    * 检查账号密码
    */
   void checkLoginFunction() {
-    String passwordController=_passwordController.text;
     hindKeyBoarder();
-    if(password==passwordController){
-      actionStart();
-    }else{
-      Fluttertoast.showToast(msg: "账号或密码不存在！");
-    }
+    loginFunction();
   }
 
   /**
@@ -186,14 +180,24 @@ class _LoginPageState extends State<LoginPage> {
   /**
    * http
    */
-  loginFunction() async{
+  void loginFunction() async{
     String phoneController=_userNameController.text;
+    String passwordController=_passwordController.text;
     BaseOptions options = new BaseOptions(
-        baseUrl: "http://10.0.2.2:8080/demo/user/queryByPhone",
+        baseUrl: "http://47.97.192.128:8080/demo/user",
         connectTimeout: 50000);
     Dio dio = new Dio(options);
-    var response=await dio.get("http://10.0.2.2:8080/demo/user/queryByPhone",queryParameters: {"phone":phoneController});
-    password=response.data["password"];
+    var response=await dio.get("/queryByPhone",queryParameters: {"phone":phoneController});
+    if(response.toString()==""){
+      Fluttertoast.showToast(msg: "账号不存在！");
+    }else{
+      password=response.data["password"];
+      if(password==passwordController){
+        actionStart();
+      }else{
+        Fluttertoast.showToast(msg: "账号或密码错误！");
+      }
+    }
   }
 }
 
