@@ -8,6 +8,7 @@ import 'package:flutter/services.dart';
 import 'package:water/login/regist.dart';
 import 'package:water/pages/navigation_bar.dart';
 import 'package:fluttertoast/fluttertoast.dart';
+import 'package:water/ui/data.dart';
 
 class LoginPage extends StatefulWidget {
   @override
@@ -192,6 +193,15 @@ class _LoginPageState extends State<LoginPage> {
       Fluttertoast.showToast(msg: "账号不存在！");
     }else{
       password=response.data["password"];
+      Global.id=response.data['id'];
+      Global.phone=response.data['phone'];
+      Global.name=response.data['name'];
+      Global.sex=response.data['sex'];
+      if(response.data['sex']=='男'){
+        Global.head='assets/icon/boy.png';
+      }else{
+        Global.head='assets/icon/girl.png';
+      }
       if(password==passwordController){
         actionStart();
       }else{

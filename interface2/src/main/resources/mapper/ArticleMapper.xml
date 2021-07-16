@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.haley.demo.dao.ArticleDao">
+    
+    <resultMap id="articleMap" type="com.haley.demo.entity.ArticleEntity">
+        <id column="id" property="id"></id>
+        <result column="content" property="content"></result>
+        <result column="article_date" property="atricleDate"></result>
+        <association property="userEntity" javaType="com.haley.demo.entity.UserEntity">
+            <id column="user_id" property="id"></id>
+        </association>
+    </resultMap>
+
+    <select id="queryArticles" resultMap="articleMap">
+        select * from article order by article_date desc
+    </select>
+
+</mapper>

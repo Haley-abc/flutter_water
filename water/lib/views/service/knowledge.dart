@@ -11,7 +11,7 @@ class KnowledgePage extends StatefulWidget {
 class _KnowledgePageState extends State<KnowledgePage> {
   @override
   Widget build(BuildContext context) {
-    double height1 = MediaQuery.of(context).size.height-189;
+    double height1 = MediaQuery.of(context).size.height-196;
     return Container(
       height: height1,
       child: ListView.builder(

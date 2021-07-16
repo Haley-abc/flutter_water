@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:water/ui/data.dart';
 import 'package:water/ui/word.dart';
 
 class ReservoirPage extends StatefulWidget {
@@ -33,7 +34,7 @@ class _ReservoirPageState extends State<ReservoirPage> {
                   borderRadius: BorderRadius.circular(150),
                   image: DecorationImage(
                     fit: BoxFit.cover,
-                    image: AssetImage('assets/images/head1.png'),
+                    image: AssetImage(Global.head),
                   ),
                 ),
               ),

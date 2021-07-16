@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:water/ui/data.dart';
 import 'package:water/ui/word.dart';
 import 'setting/settingPage.dart';
 
@@ -27,13 +28,13 @@ class _WaterPageState extends State<WaterPage> {
               borderRadius: BorderRadius.circular(150),
               image: DecorationImage(
                 fit: BoxFit.cover,
-                image: AssetImage('assets/images/head1.png'),
+                image: AssetImage(Global.head),
               ),
             ),
           ),
         ),
         title: Text(
-            'Haley',
+            Global.name,
           style: TextStyle(
             fontSize: 14.0,
             color: Colors.black

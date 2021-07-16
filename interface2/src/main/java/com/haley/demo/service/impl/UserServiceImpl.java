@@ -6,6 +6,9 @@ import com.haley.demo.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * @program: demo
  * @description: 用户ServiceImpl
@@ -32,5 +35,14 @@ public class UserServiceImpl implements UserService{
     @Override
     public UserEntity queryByPhone(String phone) {
         return userDao.queryByPhone(phone);
+    }
+
+    @Override
+    public List<UserEntity> queryFriends(List<Integer> friendIds) {
+        List<UserEntity> friendList=new ArrayList<UserEntity>();
+        for(int i=0;i<friendIds.size();i++){
+            friendList.add(userDao.queryById(friendIds.get(i)));
+        }
+        return friendList;
     }
 }

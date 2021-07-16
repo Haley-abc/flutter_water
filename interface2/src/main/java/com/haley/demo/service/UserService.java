@@ -2,6 +2,8 @@ package com.haley.demo.service;
 
 import com.haley.demo.entity.UserEntity;
 
+import java.util.List;
+
 /**
  * @program: demo
  * @description: 用户Service
@@ -28,4 +30,6 @@ public interface UserService {
      * @return
      */
     UserEntity queryByPhone(String phone);
+
+    List<UserEntity> queryFriends(List<Integer> friendIds);
 }

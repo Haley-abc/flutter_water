@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
+import 'package:water/ui/data.dart';
 import 'package:water/ui/word.dart';
 import 'package:water/views/list/rankList.dart';
 
@@ -28,7 +29,7 @@ class _RankingListPageState extends State<RankingListPage> {
                 borderRadius: BorderRadius.circular(150),
                 image: DecorationImage(
                   fit: BoxFit.cover,
-                  image: AssetImage('assets/images/head1.png'),
+                  image: AssetImage(Global.head),
                 ),
               ),
             ),
@@ -65,7 +66,7 @@ class _RankingListPageState extends State<RankingListPage> {
   Widget buildBottomSheetWidget(BuildContext context) {
     //弹框中内容  310 的调试
     return Container(
-      height: 270,
+      height: 150,
       child: Column(
         children: [
           buildItem("好友日榜",onTap:(){
@@ -75,25 +76,9 @@ class _RankingListPageState extends State<RankingListPage> {
           }),
           //分割线
           Divider(),
-
-          buildItem("区域日榜",onTap:(){
-            setState(() {
-              resultMessage = "区域日榜";
-            });
-          }),
-
-          //分割线
-          Divider(),
           buildItem("好友周榜",onTap:(){
             setState(() {
               resultMessage = "好友周榜";
-            });
-          }),
-          //分割线
-          Divider(),
-          buildItem("区域周榜",onTap:(){
-            setState(() {
-              resultMessage = "区域周榜";
             });
           }),
 

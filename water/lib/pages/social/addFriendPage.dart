@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:water/ui/word.dart';
+import 'package:water/views/social/friendList.dart';
+import 'package:water/views/social/searchFriendList.dart';
 
 class AddFriendPage extends StatefulWidget {
   const AddFriendPage({Key? key}) : super(key: key);
@@ -9,6 +11,13 @@ class AddFriendPage extends StatefulWidget {
 }
 
 class _AddFriendPageState extends State<AddFriendPage> {
+
+  //用户名输入框的焦点控制
+  FocusNode _phoneFocusNode = new FocusNode();
+
+  //文本输入框控制器
+  TextEditingController _phoneController = new TextEditingController();
+
   int _currentIndex = 0;
 
   @override
@@ -26,18 +35,35 @@ class _AddFriendPageState extends State<AddFriendPage> {
         ),
         centerTitle: true,
       ),
-        body: Container(
-          decoration: new BoxDecoration(
-            border: Border.all(color: Colors.grey, width: 1.0), //灰色的一层边框
-            color: Colors.white,
-            borderRadius: BorderRadius.all( Radius.circular(5.0)),
+      body: Column(
+        children: <Widget>[
+          Row(
+            children: <Widget>[
+              SizedBox(width: 20.0,),
+              Expanded(
+                  child: TextField(
+                    focusNode: _phoneFocusNode,
+                    controller: _phoneController,
+                    decoration: InputDecoration(
+                      prefixIcon: Icon(Icons.search),
+                      hintText:'请输入手机号',
+                    ),
+                  )
+              ),
+              Container(
+                alignment: Alignment.center,
+                width: 50.0,
+                child: InkWell(child: Text('查找'),),
+              )
+            ],
           ),
-          alignment: Alignment.center,
-          height: 38,
-//           padding: EdgeInsets.fromLTRB(0.0, 0.0, 0.0, 0.0),
-          child: TextField(
-          ),
-        ),
+          SizedBox(height: 20.0,),
+          Expanded(child: (SearchFriendList())),
+        ],
+      ),
     );
   }
+
+
+
 }

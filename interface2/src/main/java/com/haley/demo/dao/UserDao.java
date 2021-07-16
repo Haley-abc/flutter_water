@@ -4,6 +4,8 @@ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.haley.demo.entity.UserEntity;
 import org.apache.ibatis.annotations.Mapper;
 
+import java.util.List;
+
 /**
  * @program: demo
  * @description: 用户dao
@@ -31,5 +33,6 @@ public interface UserDao {
      * @param phone
      * @return
      */
+
     UserEntity queryByPhone(String phone);
 }
