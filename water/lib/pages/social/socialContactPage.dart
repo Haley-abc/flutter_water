@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:water/pages/social/editArticalPage.dart';
+import 'package:water/ui/data.dart';
 import 'package:water/ui/word.dart';
 import 'FriendListPage.dart';
 import 'package:water/views/social/articleList.dart';
@@ -30,7 +31,7 @@ class _SocialContactPageState extends State<SocialContactPage> {
               borderRadius: BorderRadius.circular(150),
               image: DecorationImage(
                 fit: BoxFit.cover,
-                image: AssetImage('assets/images/head1.png'),
+                image: AssetImage(Global.head),
               ),
             ),
           ),

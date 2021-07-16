@@ -1,18 +1,15 @@
-import 'dart:convert';
-
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:water/ui/UserModel.dart';
-import 'package:water/ui/data.dart';
 
-class FriendList extends StatefulWidget {
+class SearchFriendList extends StatefulWidget {
   @override
-  _FriendListState createState() {
-    return _FriendListState();
+  _SearchFriendListState createState() {
+    return _SearchFriendListState();
   }
 }
 
-class _FriendListState extends State<FriendList>{
+class _SearchFriendListState extends State<SearchFriendList>{
 
   List<UserModel> users=[];
 
@@ -25,16 +22,14 @@ class _FriendListState extends State<FriendList>{
 
   Future<void> initData() async{
     BaseOptions options = new BaseOptions(
-        baseUrl: "http://192.168.0.125:8080/demo/friend",
+        baseUrl: "http://192.168.0.125:8080/demo/user",
         connectTimeout: 50000);
     Dio dio = new Dio(options);
-    var response=await dio.get("/queryFriend",queryParameters: {"id":Global.id});
-    List<dynamic> value = response.data;
+    var response=await dio.get("/queryByPhone",queryParameters: {"phone":"18280132686"});
     List<UserModel> users2=[];
-    for(var i=0;i<value.length;i++){
-      UserModel user = UserModel.formMap(value[i]);
-      users2.add(user);
-    }
+    Map<String,dynamic> map=response.data;
+    UserModel user = UserModel.formMap(map);
+    users2.add(user);
     setState(() {
       users=users2;
     });
@@ -74,3 +69,4 @@ class _FriendListState extends State<FriendList>{
     );
   }
 }
+

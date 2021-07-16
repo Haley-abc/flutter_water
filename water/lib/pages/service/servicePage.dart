@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:water/ui/data.dart';
 import 'package:water/ui/word.dart';
 import 'package:water/views/service/activity.dart';
 import 'package:water/views/service/class.dart';
@@ -31,7 +32,7 @@ class _ServicePageState extends State<ServicePage> {
               borderRadius: BorderRadius.circular(150),
               image: DecorationImage(
                 fit: BoxFit.cover,
-                image: AssetImage('assets/images/head1.png'),
+                image: AssetImage(Global.head),
               ),
             ),
           ),
