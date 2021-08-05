@@ -1,0 +1,1 @@
+double titleSize = 15.0;

@@ -10,11 +10,20 @@
         <result column="article_date" property="atricleDate"></result>
         <association property="userEntity" javaType="com.haley.demo.entity.UserEntity">
             <id column="user_id" property="id"></id>
+            <result column="name" property="name"></result>
+            <result column="phone" property="phone"></result>
+            <result column="sex" property="sex"></result>
+            <result column="password" property="password"></result>
         </association>
     </resultMap>
 
     <select id="queryArticles" resultMap="articleMap">
         select * from article order by article_date desc
     </select>
+
+    <insert id="save" parameterType="com.haley.demo.entity.ArticleEntity">
+        insert into article(user_id,content,article_date)
+        values (#{userEntity.id},#{content},#{atricleDate})
+    </insert>
 
 </mapper>

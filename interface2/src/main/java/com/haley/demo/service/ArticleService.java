@@ -17,4 +17,6 @@ public interface ArticleService {
      */
     List<ArticleEntity> queryArticles();
 
+    void save(ArticleEntity articleEntity);
+
 }

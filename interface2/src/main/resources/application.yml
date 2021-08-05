@@ -10,9 +10,9 @@ spring:
     driver-class-name: com.mysql.jdbc.Driver
     username: haley
     password: luna0707__
-    jackson:
-      date-format: "yyyy-MM-dd"
-      time-zone: "GMT+8"
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+8
 
 mybatis-plus:
   mapper-locations: classpath:mapper/*Mapper.xml

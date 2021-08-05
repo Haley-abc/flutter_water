@@ -1,0 +1,46 @@
+server:
+  port: 8088
+  servlet:
+    context-path: /water
+
+spring:
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    url: jdbc:mysql://rm-bp1mzgzjb48r3773bio.mysql.rds.aliyuncs.com/water?serverTimezone=UTC&characterEncoding=utf8&useUnicode=true&useSSL=false&autoReconnect=true&failOverReadOnly=false
+    driver-class-name: com.mysql.jdbc.Driver
+    username: haley
+    password: luna0707__
+  jackson:
+    date-format: "yyyy-MM-dd HH:mm:ss"
+    time-zone: "GMT+8"
+  servlet:
+    multipart:
+      max-file-size: 100MB
+      max-request-size: 500MB
+
+mybatis-plus:
+  typeAliasesPackage: com.haley.water.entity
+
+swagger:
+  basic:
+    enable: true
+    username: admin
+    password: admin
+
+logging:
+  level:
+    com:
+      create404:
+        suishoupai:
+          mapper: debug
+
+token:
+  privateKey: 'fdasfgdsagaxgsregdfdjyghjfhebfdgwe45ygrfbsdfshfdsag'
+  yangToken: 1000000
+  oldToken: 3000000000
+
+file:
+  localurl: "D:/springbootFile/upload/images/"
+  uploadurl: "/u01/upload/images/"
+
+

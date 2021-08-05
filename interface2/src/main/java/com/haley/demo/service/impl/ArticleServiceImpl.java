@@ -27,8 +27,13 @@ public class ArticleServiceImpl implements ArticleService {
     public List<ArticleEntity> queryArticles() {
         List<ArticleEntity> articles=articleDao.queryArticles();
         for(int i=0;i<articles.size();i++){
-            articles.get(i).setUserEntity(userService.queryById(articles.get(i).getId()));
+            articles.get(i).setUserEntity(userService.queryById(articles.get(i).getUserEntity().getId()));
         }
         return articles;
+    }
+
+    @Override
+    public void save(ArticleEntity articleEntity) {
+        articleDao.save(articleEntity);
     }
 }

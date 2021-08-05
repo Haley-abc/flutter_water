@@ -27,4 +27,28 @@ public class FriendEntity {
      * 好友列表
      */
     private UserEntity friendList;
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public UserEntity getUserEntity() {
+        return userEntity;
+    }
+
+    public void setUserEntity(UserEntity userEntity) {
+        this.userEntity = userEntity;
+    }
+
+    public UserEntity getFriendList() {
+        return friendList;
+    }
+
+    public void setFriendList(UserEntity friendList) {
+        this.friendList = friendList;
+    }
 }

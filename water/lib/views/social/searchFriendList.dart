@@ -22,7 +22,7 @@ class _SearchFriendListState extends State<SearchFriendList>{
 
   Future<void> initData() async{
     BaseOptions options = new BaseOptions(
-        baseUrl: "http://192.168.0.125:8080/demo/user",
+        baseUrl: "http://47.97.192.128:8080/demo/user",
         connectTimeout: 50000);
     Dio dio = new Dio(options);
     var response=await dio.get("/queryByPhone",queryParameters: {"phone":"18280132686"});

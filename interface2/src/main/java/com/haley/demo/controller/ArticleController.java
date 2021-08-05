@@ -4,10 +4,9 @@ import com.haley.demo.entity.ArticleEntity;
 import com.haley.demo.entity.UserEntity;
 import com.haley.demo.service.ArticleService;
 import com.haley.demo.service.UserService;
+import com.haley.demo.utils.Result;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -26,6 +25,12 @@ public class ArticleController {
     @GetMapping("/queryArticles")
     public List<ArticleEntity> queryArticles(){
         return articleService.queryArticles();
+    }
+
+    @PostMapping("/saveOne")
+    public Result saveone(@RequestBody ArticleEntity articleEntity){
+        articleService.save(articleEntity);
+        return Result.ok("保存成功");
     }
 
 }
