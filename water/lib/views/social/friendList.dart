@@ -25,10 +25,10 @@ class _FriendListState extends State<FriendList>{
 
   Future<void> initData() async{
     BaseOptions options = new BaseOptions(
-        baseUrl: "http://192.168.0.125:8080/demo/friend",
+        baseUrl: "http://47.97.192.128:8080/demo/friend",
         connectTimeout: 50000);
     Dio dio = new Dio(options);
-    var response=await dio.get("/queryFriend",queryParameters: {"id":Global.id});
+    var response=await dio.get("/queryFriends",queryParameters: {"id":Global.id});
     List<dynamic> value = response.data;
     List<UserModel> users2=[];
     for(var i=0;i<value.length;i++){

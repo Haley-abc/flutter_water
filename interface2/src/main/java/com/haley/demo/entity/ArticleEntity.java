@@ -1,10 +1,12 @@
 package com.haley.demo.entity;
 
 import com.baomidou.mybatisplus.annotation.TableName;
+import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.Data;
 import lombok.experimental.Accessors;
+import org.springframework.format.annotation.DateTimeFormat;
 
-import java.sql.Date;
+import java.util.Date;
 
 /**
  * @description:
@@ -30,6 +32,7 @@ public class ArticleEntity {
     /**
      * 文章创建时间
      */
+    @JsonFormat(pattern="yyyy-MM-dd HH:mm:ss",timezone="GMT+8")
     private Date atricleDate;
 
     public int getId() {

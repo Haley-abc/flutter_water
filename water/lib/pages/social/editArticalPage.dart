@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
+import 'package:water/ui/data.dart';
 import 'package:water/ui/word.dart';
 import 'addFriendPage.dart';
 import 'package:water/views/social/friendList.dart';
@@ -63,7 +64,7 @@ Widget builEditWidget() {
               borderRadius: BorderRadius.circular(100),
               image: DecorationImage(
                 fit: BoxFit.cover,
-                image: AssetImage('assets/images/head2.png'),
+                image: AssetImage(Global.head),
               ),
             ),
             width: 40.0,
@@ -73,7 +74,7 @@ Widget builEditWidget() {
             width: 10.0,
           ),
           Text(
-            'Haley',
+            Global.name,
             style: TextStyle(fontSize: 18.0),
           ),
         ],
