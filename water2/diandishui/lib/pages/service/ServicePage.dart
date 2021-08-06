@@ -1,5 +1,10 @@
+import 'package:diandishui/module/color.dart';
 import 'package:diandishui/module/effect.dart';
 import 'package:diandishui/module/text.dart';
+import 'package:diandishui/pages/service/activity/activityList.dart';
+import 'package:diandishui/pages/service/classes/classesList.dart';
+import 'package:diandishui/pages/service/knowledge/knowledgeList.dart';
+import 'package:diandishui/pages/service/policy/policyList.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -12,11 +17,33 @@ class ServicePage extends StatefulWidget {
   }
 }
 
-class ServicePageState extends State<ServicePage> {
+class ServicePageState extends State<ServicePage>
+    with TickerProviderStateMixin {
+
+  List<Tab> tabLabels = [
+    Tab(text: '知识科普'),
+    Tab(text: '政策解读'),
+    Tab(text: '活动宣传'),
+    Tab(text: '课程开设')
+  ];
+  TabController _tabController;
+
+  @override
+  void initState() {
+    super.initState();
+    _tabController = TabController(length: tabLabels.length, vsync: this);
+  }
+
   @override
   Widget build(BuildContext context) {
-    double width = MediaQuery.of(context).size.width;
-    double height = MediaQuery.of(context).size.height;
+    double width = MediaQuery
+        .of(context)
+        .size
+        .width;
+    double height = MediaQuery
+        .of(context)
+        .size
+        .height;
     return Scaffold(
       appBar: AppBar(
         leading: Padding(
@@ -39,8 +66,29 @@ class ServicePageState extends State<ServicePage> {
           ),
         ),
         centerTitle: true,
+        bottom: PreferredSize(
+          preferredSize: Size.fromHeight(40),
+          child: Material(
+            color: greyF6F6F6,
+            child: TabBar(
+              controller: _tabController,
+              indicatorSize: TabBarIndicatorSize.label,
+              tabs: tabLabels,
+              indicatorColor: titleColor,
+            ),
+          ),
+        ),
+          elevation: 1
       ),
-      body: Text("社交"),
+      body: TabBarView(
+        controller: _tabController,
+        children: <Widget>[
+          KnowledgeList(),
+          PolicyPage(),
+          ActivityPage(),
+          ClassesPage()
+        ],
+      ),
     );
   }
 }

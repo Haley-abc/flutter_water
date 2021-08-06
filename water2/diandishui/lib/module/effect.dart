@@ -9,3 +9,10 @@ BorderRadius borderRadiusOnlyLeftRightTop24() {
 }
 
 double titleHeadPadding = 11.0;//标题框头像padding
+
+BoxShadow shadowOffsetY2() {
+  return BoxShadow(
+      color: Color.fromARGB(128, 204, 204, 204),
+      blurRadius: 6.0,
+      offset: Offset(0, 2));
+}
