@@ -1,6 +1,6 @@
 import 'dart:async';
 
-import 'package:diandishui/global/globalData.dart';
+import 'package:diandishui/global/myInfo.dart';
 import 'package:diandishui/module/color.dart';
 import 'package:diandishui/module/effect.dart';
 import 'package:diandishui/module/navigation_bar.dart';
@@ -51,11 +51,11 @@ class _LoginPageState extends State<LoginPage> {
         setState(() {
           animationType = "hands_down";
         });
-        Future.delayed(Duration(milliseconds: 500), () {
-          setState(() {
-            animationType = "idle";
-          });
-        });
+//        Future.delayed(Duration(milliseconds: 500), () {
+//          setState(() {
+//            animationType = "idle";
+//          });
+//        });
       }
     });
   }
@@ -229,20 +229,16 @@ class _LoginPageState extends State<LoginPage> {
     HttpRequest.request("$BASE_URL/user/login",
         method: "post",
         data: {"phone": phone, "password": password}).then((value) {
-      String head;
-      if (value.data["result"]["sex"] == "女") {
-        head = "assets/icon/girl.png";
-      } else {
-        head = "assets/icon/boy.png";
-      }
       if (value.data["code"] == 200) {
-        GlobalData.initData(
-            value.data["result"]["id"],
-            value.data["result"]["name"],
-            phone,
-            value.data["result"]["sex"],
-            head);
-
+        if (value.data["result"]["sex"] == "女") {
+          GlobalData.head = "assets/icon/girl.png";
+        } else {
+          GlobalData.head = "assets/icon/boy.png";
+        }
+        GlobalData.id = value.data["result"]["id"];
+        GlobalData.name = value.data["result"]["name"];
+        GlobalData.phone = phone;
+        GlobalData.sex = value.data["result"]["sex"];
         setState(() {
           animationType = "success";
         });
