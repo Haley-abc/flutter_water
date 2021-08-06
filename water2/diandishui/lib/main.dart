@@ -1,4 +1,5 @@
 import 'package:diandishui/login/login.dart';
+import 'package:diandishui/module/color.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -12,7 +13,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: '点滴水',
-      theme: ThemeData(primaryColor: Colors.white),
+      theme: ThemeData(primaryColor: titleColor),
       home: LoginPage(),
     );
   }

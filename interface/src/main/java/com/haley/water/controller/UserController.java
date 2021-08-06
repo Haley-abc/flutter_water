@@ -34,7 +34,7 @@ public class UserController {
             return Result.error("密码错误");
         }
         if(user.getPassword().equals(loginDto.getPassword())){
-            return Result.ok("密码正确");
+            return Result.ok(user,"密码正确");
         }
         return Result.ok("登录失败");
     }
