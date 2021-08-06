@@ -1,8 +1,8 @@
-import 'package:diandishui/ranking/ReservoirPage.dart';
-import 'package:diandishui/reservoir/ReservoirPage.dart';
-import 'package:diandishui/service/ServicePage.dart';
-import 'package:diandishui/social/SocialPage.dart';
-import 'package:diandishui/water/waterPage.dart';
+import 'package:diandishui/pages/ranking/RankingPage.dart';
+import 'package:diandishui/pages/reservoir/ReservoirPage.dart';
+import 'package:diandishui/pages/service/ServicePage.dart';
+import 'package:diandishui/pages/social/SocialPage.dart';
+import 'package:diandishui/pages/water/waterPage.dart';
 import 'package:flutter/material.dart';
 
 class NavigationPage extends StatefulWidget {
