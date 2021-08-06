@@ -1,6 +1,6 @@
-import 'package:diandishui/global/globalData.dart';
+import 'package:diandishui/global/myInfo.dart';
 import 'package:diandishui/module/effect.dart';
-import 'package:diandishui/utils/storage_util.dart';
+import 'package:diandishui/pages/water/seetingPage.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -14,17 +14,6 @@ class WaterPage extends StatefulWidget {
 }
 
 class WaterPageState extends State<WaterPage> {
-
-  String name;
-  String head;
-
-  @override
-  void initState() {
-    super.initState();
-    name = GlobalData.name;
-    head = GlobalData.head;
-  }
-
   @override
   Widget build(BuildContext context) {
     double width = MediaQuery.of(context).size.width;
@@ -39,13 +28,13 @@ class WaterPageState extends State<WaterPage> {
               borderRadius: BorderRadius.circular(150),
               image: DecorationImage(
                 fit: BoxFit.cover,
-                image: AssetImage(head),
+                image: AssetImage(GlobalData.head),
               ),
             ),
           ),
         ),
         title: Text(
-          name,
+          GlobalData.name,
           style: TextStyle(
               fontSize: 14.0,
               color: Colors.black
@@ -54,7 +43,7 @@ class WaterPageState extends State<WaterPage> {
         actions: [
           IconButton(
             onPressed: () {
-              //Navigator.push(context, MaterialPageRoute(builder: (context)=>SettingPage()));
+              Navigator.push(context, MaterialPageRoute(builder: (context)=>SettingPage()));
             },
             icon: Image(
               image: AssetImage("assets/icon/setting.png"),

@@ -1,3 +1,4 @@
+import 'package:diandishui/global/myInfo.dart';
 import 'package:diandishui/module/text.dart';
 import 'package:diandishui/pages/social/socialView/image_view.dart';
 import 'package:flutter/material.dart';
@@ -54,7 +55,7 @@ class _EditArticaltPageState extends State<EditArticaltPage> {
                     borderRadius: BorderRadius.circular(100),
                     image: DecorationImage(
                       fit: BoxFit.cover,
-                      image: AssetImage("assets/icon/girl.png"),
+                      image: AssetImage(GlobalData.head),
                     ),
                   ),
                   width: 40.0,
@@ -64,7 +65,7 @@ class _EditArticaltPageState extends State<EditArticaltPage> {
                   width: 10.0,
                 ),
                 Text(
-                  "Haley",
+                  GlobalData.name,
                   style: TextStyle(fontSize: 18.0),
                 ),
               ],
