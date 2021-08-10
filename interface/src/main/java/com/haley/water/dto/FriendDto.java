@@ -12,7 +12,7 @@ public class FriendDto {
     /**
      * 好友id
      */
-    private int id;
+    private Integer id;
     /**
      * 好友名字
      */

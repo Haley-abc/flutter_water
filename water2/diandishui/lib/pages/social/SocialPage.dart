@@ -2,6 +2,7 @@ import 'package:diandishui/module/effect.dart';
 import 'package:diandishui/module/text.dart';
 import 'package:diandishui/pages/social/FriendListPage.dart';
 import 'package:diandishui/pages/social/editArticalPage.dart';
+import 'package:diandishui/pages/social/socialView/articleList.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -60,7 +61,7 @@ class SocialPageState extends State<SocialPage> {
           )
         ],
       ),
-      body: Text("社交"),
+      body: ArticalList(),
     );
   }
 }
