@@ -230,15 +230,11 @@ class _LoginPageState extends State<LoginPage> {
         method: "post",
         data: {"phone": phone, "password": password}).then((value) {
       if (value.data["code"] == 200) {
-        if (value.data["result"]["sex"] == "女") {
-          GlobalData.head = "assets/icon/girl.png";
-        } else {
-          GlobalData.head = "assets/icon/boy.png";
-        }
         GlobalData.id = value.data["result"]["id"];
         GlobalData.name = value.data["result"]["name"];
         GlobalData.phone = phone;
         GlobalData.sex = value.data["result"]["sex"];
+        GlobalData.head = value.data["result"]["head"];
         setState(() {
           animationType = "success";
         });

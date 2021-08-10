@@ -1,5 +1,6 @@
 import 'package:diandishui/module/effect.dart';
 import 'package:diandishui/module/text.dart';
+import 'package:diandishui/pages/social/FriendListPage.dart';
 import 'package:diandishui/pages/social/editArticalPage.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -51,7 +52,7 @@ class SocialPageState extends State<SocialPage> {
           ),
           IconButton(
             onPressed: () {
-              //Navigator.push(context, MaterialPageRoute(builder: (context)=>FriendListPage()));
+              Navigator.push(context, MaterialPageRoute(builder: (context)=>FriendListPage()));
             },
             icon: Image(
               image: AssetImage("assets/icon/friends.png"),
