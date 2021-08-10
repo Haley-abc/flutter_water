@@ -16,7 +16,7 @@ public class User {
     /**
      * 用户id
      */
-    private int id;
+    private Integer id;
     /**
      * 用户姓名
      */
@@ -33,4 +33,8 @@ public class User {
      * 用户性别
      */
     private String sex;
+    /**
+     * 用户头像
+     */
+    private String head;
 }

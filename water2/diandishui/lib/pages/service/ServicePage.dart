@@ -69,7 +69,7 @@ class ServicePageState extends State<ServicePage>
         bottom: PreferredSize(
           preferredSize: Size.fromHeight(40),
           child: Material(
-            color: greyF6F6F6,
+            color: Colors.white,
             child: TabBar(
               controller: _tabController,
               indicatorSize: TabBarIndicatorSize.label,
