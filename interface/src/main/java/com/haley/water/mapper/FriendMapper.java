@@ -9,5 +9,10 @@ import java.util.List;
 
 @Mapper
 public interface FriendMapper extends BaseMapper<Friend> {
+    /**
+     * 根据用户id查找好友列表
+     * @param userId
+     * @return
+     */
     List<FriendDto> selectFriend(int userId);
 }
