@@ -1,7 +1,9 @@
 import 'package:diandishui/model/articleModel.dart';
+import 'package:diandishui/model/friendListModel.dart';
 import 'package:diandishui/module/effect.dart';
 import 'package:diandishui/network/http_config.dart';
 import 'package:diandishui/network/http_request.dart';
+import 'package:diandishui/pages/social/UserInfo.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -70,16 +72,23 @@ class _ArticalListState extends State<ArticalList> {
               child: ListTile(
                 title: Row(
                   children: <Widget>[
-                    Container(
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(100),
-                        image: DecorationImage(
-                          fit: BoxFit.cover,
-                          image: AssetImage(articleList[index].head),
+                    InkWell(
+                      child: Container(
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(100),
+                          image: DecorationImage(
+                            fit: BoxFit.cover,
+                            image: AssetImage(articleList[index].head),
+                          ),
                         ),
+                        width: 40.0,
+                        height: 40.0,
                       ),
-                      width: 40.0,
-                      height: 40.0,
+                      onTap: (){
+                        FriendListModel user = new FriendListModel();
+                        user.setAll(articleList[index].id, articleList[index].name, articleList[index].head);
+                        Navigator.push(context, MaterialPageRoute(builder: (context)=>UserInfoPage(user: user,)));
+                      },
                     ),
                     Container(
                       margin: EdgeInsets.only(left: 15.0),
