@@ -1,5 +1,7 @@
 package com.haley.water.entity;
 
+import com.baomidou.mybatisplus.annotation.IdType;
+import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.Data;
 import lombok.experimental.Accessors;
@@ -16,6 +18,7 @@ public class User {
     /**
      * 用户id
      */
+    @TableId(value = "id", type = IdType.AUTO)
     private Integer id;
     /**
      * 用户姓名
