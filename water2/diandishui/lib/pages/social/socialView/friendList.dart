@@ -3,6 +3,7 @@ import 'package:diandishui/model/friendListModel.dart';
 import 'package:diandishui/module/effect.dart';
 import 'package:diandishui/network/http_config.dart';
 import 'package:diandishui/network/http_request.dart';
+import 'package:diandishui/pages/social/UserInfo.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 
@@ -13,8 +14,7 @@ class FriendList extends StatefulWidget {
   }
 }
 
-class _FriendListState extends State<FriendList>{
-
+class _FriendListState extends State<FriendList> {
   List<FriendListModel> friendList = [];
 
   @override
@@ -24,17 +24,16 @@ class _FriendListState extends State<FriendList>{
     initData();
   }
 
-  Future<void> initData() async{
+  Future<void> initData() async {
     HttpRequest.request("$BASE_URL/friend/selectFriend",
         method: "get",
         params: {
           "userId": GlobalData.id,
-        })
-        .then((value) {
+        }).then((value) {
       if (value.data["code"] == 200) {
-        List<FriendListModel> friendList2=[];
+        List<FriendListModel> friendList2 = [];
         List<dynamic> result = value.data["result"];
-        for(var i=0;i<result.length;i++){
+        for (var i = 0; i < result.length; i++) {
           FriendListModel friendListModel = FriendListModel.formMap(result[i]);
           friendList2.add(friendListModel);
         }
@@ -49,17 +48,17 @@ class _FriendListState extends State<FriendList>{
 
   @override
   Widget build(BuildContext context) {
-    if(friendList.isEmpty||friendList==null){
+    if (friendList.isEmpty || friendList == null) {
       return Container(
         alignment: Alignment.topCenter,
         width: MediaQuery.of(context).size.width,
         margin: EdgeInsets.only(top: 30.0),
         child: Text("暂无好友"),
       );
-    }else{
+    } else {
       return ListView.builder(
         itemCount: friendList.length,
-        itemBuilder: (context,index){
+        itemBuilder: (context, index) {
           return Container(
             decoration: BoxDecoration(
               color: Colors.white,
@@ -81,10 +80,11 @@ class _FriendListState extends State<FriendList>{
               ),
               title: Text(
                 friendList[index].name,
-                style: TextStyle(
-                    fontSize: 16.0
-                ),
+                style: TextStyle(fontSize: 16.0),
               ),
+              onTap: (){
+                Navigator.push(context, MaterialPageRoute(builder: (context)=>UserInfoPage(user: friendList[index])));
+              },
             ),
           );
         },

@@ -10,8 +10,6 @@ class FriendListPage extends StatefulWidget {
 }
 
 class _FriendListPageState extends State<FriendListPage> {
-  int _currentIndex = 0;
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
