@@ -57,62 +57,85 @@ class _ArticalListState extends State<ArticalList> {
   Widget build(BuildContext context) {
     return RefreshIndicator(
       child: ListView.builder(
-        itemCount: articleList.length,
-        itemBuilder: (context, index) {
-          return Container(
-            padding: EdgeInsets.all(8.0),
-            decoration: BoxDecoration(
-              color: Colors.white,
-              borderRadius: borderRadiusAll8(),
-              boxShadow: [shadowOffsetY2()],
-            ),
-            margin: EdgeInsets.fromLTRB(8, 12, 8, 0),
-            child: ListTile(
-              title: Row(
-                children: <Widget>[
-                  Container(
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(100),
-                      image: DecorationImage(
-                        fit: BoxFit.cover,
-                        image: AssetImage(articleList[index].head),
+          itemCount: articleList.length,
+          itemBuilder: (context, index) {
+            return Container(
+              padding: EdgeInsets.only(top: 4.0,bottom: 4.0),
+              decoration: BoxDecoration(
+                color: Colors.white,
+                borderRadius: borderRadiusAll8(),
+                boxShadow: [shadowOffsetY2()],
+              ),
+              margin: EdgeInsets.fromLTRB(8, 12, 8, 0),
+              child: ListTile(
+                title: Row(
+                  children: <Widget>[
+                    Container(
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(100),
+                        image: DecorationImage(
+                          fit: BoxFit.cover,
+                          image: AssetImage(articleList[index].head),
+                        ),
+                      ),
+                      width: 40.0,
+                      height: 40.0,
+                    ),
+                    Container(
+                      margin: EdgeInsets.only(left: 15.0),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: <Widget>[
+                          Text(articleList[index].name),
+                          SizedBox(
+                            height: 5.0,
+                          ),
+                          Text(
+                            articleList[index].articleDate,
+                            style:
+                                TextStyle(fontSize: 11.0, color: Colors.grey),
+                          ),
+                        ],
                       ),
                     ),
-                    width: 40.0,
-                    height: 40.0,
-                  ),
-                  Container(
-                    margin: EdgeInsets.only(left: 15.0),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: <Widget>[
-                        Text(articleList[index].name),
-                        Text(
-                          articleList[index].articleDate,
-                          style:
-                          TextStyle(fontSize: 11.0, color: Colors.grey),
-                        ),
-                      ],
-                    ),
-                  ),
-                ],
-              ),
-              subtitle: Container(
-                padding: EdgeInsets.only(top: 10.0),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: <Widget>[
-                    Text(
-                      articleList[index].content,
-                      style: TextStyle(fontSize: 16.0),
-                    ),
+                    Expanded(
+                        child: Container(
+                          alignment: Alignment.topRight,
+                          width: 30.0,
+                          height: 30.0,
+                          child: IconButton(
+                            onPressed: () {
+                            },
+                            icon: Image(
+                              image: AssetImage("assets/icon/dots.png"),
+                            ),
+                          ),
+                    ))
                   ],
                 ),
+                subtitle: Container(
+                  padding: EdgeInsets.only(top: 10.0),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: <Widget>[
+                      Text(
+                        articleList[index].content,
+                        style: TextStyle(fontSize: 16.0),
+                      ),
+                    ],
+                  ),
+                ),
+                /*
+              trailing: IconButton(
+                onPressed: () {
+                },
+                icon: Image(
+                  image: AssetImage("assets/icon/dots.png"),
+                ),
+              ),*/
               ),
-            ),
-          );
-        }
-      ),
+            );
+          }),
       onRefresh: _handleRefresh,
     );
   }
