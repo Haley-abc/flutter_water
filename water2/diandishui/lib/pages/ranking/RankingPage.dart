@@ -1,5 +1,6 @@
 import 'package:diandishui/module/effect.dart';
 import 'package:diandishui/module/text.dart';
+import 'package:diandishui/pages/ranking/rankingView/rankList.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -52,7 +53,7 @@ class RankingPageState extends State<RankingPage> {
             ),
           ],
         ),
-        body: Text("body")
+        body: RankList()
     );
   }
 
