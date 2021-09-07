@@ -4,6 +4,7 @@ import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.haley.water.dto.FriendDto;
 import com.haley.water.entity.Friend;
+import com.haley.water.entity.User;
 import com.haley.water.mapper.FriendMapper;
 import com.haley.water.service.IFriendServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -32,5 +33,10 @@ public class FriendServiceImpl extends ServiceImpl<FriendMapper, Friend> impleme
     public List<FriendDto> selectFriend(int userId) {
         List<FriendDto> friendDtoList = friendMapper.selectFriend(userId);
         return friendDtoList;
+    }
+
+    @Override
+    public FriendDto searchFriend(String phone) {
+        return friendMapper.searchFriend(phone);
     }
 }

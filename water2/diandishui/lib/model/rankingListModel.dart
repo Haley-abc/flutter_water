@@ -2,7 +2,7 @@ class RankingListModel{
   int userId;
   String name;
   String head;
-  int waterConsumption;
+  double waterConsumption;
 
   static RankingListModel formMap(Map<String, dynamic> map) {
     RankingListModel rankingListModel = RankingListModel();

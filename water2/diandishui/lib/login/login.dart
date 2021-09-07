@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:diandishui/global/myInfo.dart';
+import 'package:diandishui/login/regist.dart';
 import 'package:diandishui/module/color.dart';
 import 'package:diandishui/module/effect.dart';
 import 'package:diandishui/module/navigation_bar.dart';
@@ -198,16 +199,32 @@ class _LoginPageState extends State<LoginPage> {
                   ),
                 ),
                 Container(
-                    padding: EdgeInsets.symmetric(vertical: 30, horizontal: 60),
-                    child: TextButton(
-                      onPressed: () {},
-                      child: Text(
-                        '忘记密码？',
-                        style: TextStyle(
-                            fontSize: 16,
-                            color: greyCCCCCC,
-                            fontWeight: FontWeight.bold),
-                      ),
+                    padding: EdgeInsets.only(top: 10,left: 60),
+                    child: Row(
+                      children: <Widget>[
+                        TextButton(
+                          onPressed: () {},
+                          child: Text(
+                            '忘记密码？',
+                            style: TextStyle(
+                                fontSize: 16,
+                                color: greyCCCCCC,
+                                fontWeight: FontWeight.bold),
+                          ),
+                        ),
+                        TextButton(
+                          onPressed: () {
+                            Navigator.push(context, MaterialPageRoute(builder: (context)=>RegisterPage()));
+                          },
+                          child: Text(
+                            '注册',
+                            style: TextStyle(
+                                fontSize: 16,
+                                color: greyCCCCCC,
+                                fontWeight: FontWeight.bold),
+                          ),
+                        )
+                      ],
                     ))
               ],
             ),

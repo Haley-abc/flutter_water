@@ -49,7 +49,7 @@ class _RankListState extends State<RankList> {
   @override
   Widget build(BuildContext context) {
     return ListView.builder(
-      itemCount: 3,
+      itemCount: rankingList.length,
       itemBuilder: (context, index) {
         int num = index+1;
         return Column(
