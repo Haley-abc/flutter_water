@@ -35,5 +35,5 @@ public class WaterConsumption {
     /**
      * 用水量
      */
-    private Integer waterConsumption;
+    private double waterConsumption;
 }

@@ -10,4 +10,6 @@ public interface IUserServiceImpl extends IService<User> {
      * @return
      */
     User queryByPhone(String phone);
+
+    boolean add(User user);
 }

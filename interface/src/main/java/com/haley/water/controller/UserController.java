@@ -39,4 +39,20 @@ public class UserController {
         return Result.ok("登录失败");
     }
 
+    @PostMapping("/registe")
+    public Result registe(@Validated @RequestBody User user){
+        User user2 = iUserService.queryByPhone(user.getPhone());
+        boolean result=false;
+        if (user2 != null) {
+            return Result.error("用户已存在");
+        }else{
+            result=iUserService.save(user);
+        }
+        if(result==false){
+            return Result.error("注册失败");
+        }else{
+            return Result.ok("注册成功");
+        }
+    }
+
 }

@@ -30,4 +30,10 @@ public class FriendController {
         return Result.ok(friendDtoList);
     }
 
+    @GetMapping("/searchFriend")
+    public Result searchFriend(String phone) {
+        FriendDto user = iFriendService.searchFriend(phone);
+        return Result.ok(user);
+    }
+
 }

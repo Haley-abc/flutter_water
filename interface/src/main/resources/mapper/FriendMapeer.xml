@@ -10,4 +10,9 @@
 				 where f.user_id = #{userId}
     </select>
 
+    <select id="searchFriend" resultType="com.haley.water.dto.FriendDto" parameterType="String">
+         select id,name,head
+         from user where phone = #{phone}
+    </select>
+
 </mapper>

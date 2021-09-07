@@ -30,4 +30,9 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements IU
         wrapper.eq("phone",phone);
         return userMapper.selectOne(wrapper);
     }
+
+    @Override
+    public boolean add(User user) {
+        return this.save(user);
+    }
 }

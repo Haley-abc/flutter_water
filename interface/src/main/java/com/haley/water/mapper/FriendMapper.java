@@ -3,6 +3,7 @@ package com.haley.water.mapper;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.haley.water.dto.FriendDto;
 import com.haley.water.entity.Friend;
+import com.haley.water.entity.User;
 import org.apache.ibatis.annotations.Mapper;
 
 import java.util.List;
@@ -15,4 +16,6 @@ public interface FriendMapper extends BaseMapper<Friend> {
      * @return
      */
     List<FriendDto> selectFriend(int userId);
+
+    FriendDto searchFriend(String phone);
 }

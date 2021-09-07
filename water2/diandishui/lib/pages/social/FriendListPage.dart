@@ -1,4 +1,5 @@
 import 'package:diandishui/module/text.dart';
+import 'package:diandishui/pages/social/addFriendPage.dart';
 import 'package:diandishui/pages/social/socialView/friendList.dart';
 import 'package:flutter/material.dart';
 
@@ -26,7 +27,7 @@ class _FriendListPageState extends State<FriendListPage> {
         actions: [
           IconButton(
             onPressed: () {
-              //Navigator.push(context, MaterialPageRoute(builder: (context)=>AddFriendPage()));
+              Navigator.push(context, MaterialPageRoute(builder: (context)=>AddFriendPage()));
             },
             icon: Image(
               image: AssetImage("assets/icon/add_friend.png"),
