@@ -1,4 +1,8 @@
+import 'package:diandishui/module/color.dart';
 import 'package:diandishui/module/text.dart';
+import 'package:diandishui/pages/social/socialView/friendList.dart';
+import 'package:diandishui/pages/social/socialView/new_friends.dart';
+import 'package:diandishui/pages/social/socialView/search_friends.dart';
 import 'package:flutter/material.dart';
 
 class AddFriendPage extends StatefulWidget {
@@ -9,12 +13,6 @@ class AddFriendPage extends StatefulWidget {
 }
 
 class _AddFriendPageState extends State<AddFriendPage> {
-
-  //用户名输入框的焦点控制
-  FocusNode _phoneFocusNode = new FocusNode();
-
-  //文本输入框控制器
-  TextEditingController _phoneController = new TextEditingController();
 
   int _currentIndex = 0;
 
@@ -37,30 +35,51 @@ class _AddFriendPageState extends State<AddFriendPage> {
         children: <Widget>[
           Row(
             children: <Widget>[
-              SizedBox(width: 20.0,),
               Expanded(
-                  child: TextField(
-                    focusNode: _phoneFocusNode,
-                    controller: _phoneController,
-                    decoration: InputDecoration(
-                      prefixIcon: Icon(Icons.search),
-                      hintText:'请输入手机号',
-                    ),
-                  )
-              ),
-              Container(
-                alignment: Alignment.center,
-                width: 50.0,
-                child: InkWell(child: Text('查找'),onTap: (){},),
-              )
+                  child: InkWell(
+                child: Container(
+                  color: greyF3F3F3,
+                  width: 50,
+                  height: 50,
+                  child: Center(
+                    child: Text("查找好友"),
+                  ),
+                ),
+                onTap: () {
+                  _onItemTapped(0);
+                },
+              )),
+              Expanded(
+                  child: InkWell(
+                child: Container(
+                  color: greyF3F3F3,
+                  width: 50,
+                  height: 50,
+                  child: Center(
+                    child: Text("新的朋友"),
+                  ),
+                ),
+                onTap: () {
+                  _onItemTapped(1);
+                },
+              )),
             ],
           ),
-          SizedBox(height: 20.0,),
+          IndexedStack(
+            index: _currentIndex,
+            children: [
+              NewFriendsPage(),
+              SearchFriendsPage(),
+            ],
+          ),
         ],
       ),
     );
   }
 
-
-
+  void _onItemTapped(int index) {
+    setState(() {
+      _currentIndex = index;
+    });
+  }
 }
