@@ -31,7 +31,7 @@ class _AddFriendPageState extends State<AddFriendPage> {
         ),
         centerTitle: true,
       ),
-      body: Column(
+      body: ListView(
         children: <Widget>[
           Row(
             children: <Widget>[

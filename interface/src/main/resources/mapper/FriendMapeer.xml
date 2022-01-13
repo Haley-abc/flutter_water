@@ -2,7 +2,7 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.haley.water.mapper.FriendMapper">
 
-    <select id="selectFriend" resultType="com.haley.water.dto.FriendDto" parameterType="int">
+    <select id="selectFriendList" resultType="com.haley.water.dto.FriendDto" parameterType="int">
          select u.id,u.name,u.head
          from friend f
          left join user u
@@ -10,9 +10,14 @@
 				 where f.user_id = #{userId}
     </select>
 
-    <select id="searchFriend" resultType="com.haley.water.dto.FriendDto" parameterType="String">
+    <select id="searchUser" resultType="com.haley.water.dto.FriendDto" parameterType="String">
          select id,name,head
          from user where phone = #{phone}
+    </select>
+
+    <select id="searchFriend" resultType="com.haley.water.entity.Friend" parameterType="com.haley.water.dto.SearchFriendDto">
+         select *
+         from friend where user_id = #{userId} and friend_id = #{friendId}
     </select>
 
 </mapper>

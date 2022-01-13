@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.haley.water.mapper.AddFriendMapper">
+
+    <select id="getAddFriendList" resultType="com.haley.water.dto.AddFriendDto" parameterType="int">
+         select user.id,user.name,user.head,add_friend.state
+         from add_friend
+         left join user
+         on add_friend.friend_id = user.id
+				 where add_friend.user_id = #{userId}
+    </select>
+
+    <select id="getAddFriend" resultType="com.haley.water.entity.AddFriend" parameterType="com.haley.water.dto.SearchFriendDto">
+         select * from add_friend
+		 where add_friend.user_id = #{userId} and add_friend.friend_id = #{friendId}
+    </select>
+
+</mapper>

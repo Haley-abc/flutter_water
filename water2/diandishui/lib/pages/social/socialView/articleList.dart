@@ -86,7 +86,7 @@ class _ArticalListState extends State<ArticalList> {
                       ),
                       onTap: (){
                         FriendListModel user = new FriendListModel();
-                        user.setAll(articleList[index].id, articleList[index].name, articleList[index].head);
+                        user.setAll(articleList[index].userId, articleList[index].name, articleList[index].head);
                         Navigator.push(context, MaterialPageRoute(builder: (context)=>UserInfoPage(user: user,)));
                       },
                     ),

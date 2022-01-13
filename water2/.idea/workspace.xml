@@ -2,43 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c853145c-8e43-49d7-88a1-c86678171e76" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../interface/src/main/java/com/haley/water/constant/CommonConstant.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../interface/src/main/java/com/haley/water/controller/UserController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../interface/src/main/java/com/haley/water/dto/LoginDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../interface/src/main/java/com/haley/water/entity/User.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../interface/src/main/java/com/haley/water/mapper/UserMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../interface/src/main/java/com/haley/water/service/IUserServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../interface/src/main/java/com/haley/water/service/impl/UserServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../interface/src/main/java/com/haley/water/utils/AesUtil.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../interface/src/main/java/com/haley/water/utils/Result.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../interface/src/main/resources/mapper/UserMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/diandishui/assets/Teddy.flr" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/diandishui/lib/login/login.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/diandishui/lib/module/color.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/diandishui/lib/module/effect.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/diandishui/lib/module/navigation_bar.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/diandishui/lib/module/text.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/diandishui/lib/network/data_model.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/diandishui/lib/network/http_config.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/diandishui/lib/network/http_request.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/diandishui/lib/ranking/ReservoirPage.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/diandishui/lib/reservoir/ReservoirPage.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/diandishui/lib/service/ServicePage.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/diandishui/lib/social/SocialPage.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/diandishui/lib/water/waterPage.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../interface2/src/main/java/com/haley/demo/controller/ArticleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../interface2/src/main/java/com/haley/demo/controller/ArticleController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../interface2/src/main/java/com/haley/demo/dao/ArticleDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/../interface2/src/main/java/com/haley/demo/dao/ArticleDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../interface2/src/main/java/com/haley/demo/entity/ArticleEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/../interface2/src/main/java/com/haley/demo/entity/ArticleEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../interface2/src/main/java/com/haley/demo/entity/FriendEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/../interface2/src/main/java/com/haley/demo/entity/FriendEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../interface2/src/main/java/com/haley/demo/entity/UserEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/../interface2/src/main/java/com/haley/demo/entity/UserEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../interface2/src/main/java/com/haley/demo/service/ArticleService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../interface2/src/main/java/com/haley/demo/service/ArticleService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../interface2/src/main/java/com/haley/demo/service/impl/ArticleServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../interface2/src/main/java/com/haley/demo/service/impl/ArticleServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../interface2/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/../interface2/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../interface2/src/main/resources/mapper/ArticleMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../interface2/src/main/resources/mapper/ArticleMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../water/lib/pages/social/editArticalPage.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../water/lib/pages/social/editArticalPage.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../water/lib/views/social/articleList.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../water/lib/views/social/articleList.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../water/lib/views/social/friendList.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../water/lib/views/social/friendList.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../water/lib/views/social/searchFriendList.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../water/lib/views/social/searchFriendList.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/diandishui/lib/network/http_config.dart" beforeDir="false" afterPath="$PROJECT_DIR$/diandishui/lib/network/http_config.dart" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -55,7 +21,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/diandishui/lib/login/login.dart">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3696">
+            <state relative-caret-position="218">
               <caret line="180" column="18" selection-start-line="180" selection-start-column="18" selection-end-line="180" selection-end-column="18" />
               <folding>
                 <element signature="e#0#20#0" expanded="true" />
@@ -64,19 +30,37 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/diandishui/pubspec.lock">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-2244" />
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/diandishui/pubspec.yaml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="22">
-              <caret line="34" column="14" selection-start-line="34" selection-start-column="14" selection-end-line="34" selection-end-column="14" />
+            <state relative-caret-position="187">
+              <caret line="82" column="14" lean-forward="true" selection-start-line="82" selection-start-column="14" selection-end-line="82" selection-end-column="14" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/diandishui/lib/pages/service/knowledge/today_new_detail.dart">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <folding>
+                <element signature="e#0#46#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/diandishui/lib/main.dart">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="286">
+            <state relative-caret-position="330">
               <caret line="15" column="24" selection-start-line="15" selection-start-column="24" selection-end-line="15" selection-end-column="24" />
               <folding>
                 <element signature="e#0#45#0" expanded="true" />
@@ -98,7 +82,19 @@
         <entry file="file://$PROJECT_DIR$/diandishui/lib/network/http_config.dart">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="22">
-              <caret line="1" column="21" selection-start-line="1" selection-start-column="21" selection-end-line="1" selection-end-column="21" />
+              <caret line="1" column="18" selection-start-line="1" selection-start-column="18" selection-end-line="1" selection-end-column="18" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/diandishui/lib/pages/water/waterPage.dart">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="330">
+              <caret line="30" column="49" selection-start-line="30" selection-start-column="49" selection-end-line="30" selection-end-column="49" />
+              <folding>
+                <element signature="e#0#47#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -123,10 +119,11 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/diandishui/lib/network/http_config.dart" />
         <option value="$PROJECT_DIR$/diandishui/lib/network/http_request.dart" />
         <option value="$PROJECT_DIR$/diandishui/lib/login/login.dart" />
         <option value="$PROJECT_DIR$/diandishui/pubspec.yaml" />
+        <option value="$PROJECT_DIR$/diandishui/lib/pages/water/waterPage.dart" />
+        <option value="$PROJECT_DIR$/diandishui/lib/network/http_config.dart" />
       </list>
     </option>
   </component>
@@ -143,9 +140,9 @@
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-9" />
+    <option name="x" value="-10" />
     <option name="width" value="1935" />
-    <option name="height" value="1039" />
+    <option name="height" value="1040" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -153,6 +150,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -171,32 +169,17 @@
               <item name="diandishui" type="462c0819:PsiDirectoryNode" />
               <item name="lib" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="water2" type="b2602c69:ProjectViewProjectNode" />
-              <item name="water2" type="462c0819:PsiDirectoryNode" />
-              <item name="diandishui" type="462c0819:PsiDirectoryNode" />
-              <item name="lib" type="462c0819:PsiDirectoryNode" />
-              <item name="login" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="water2" type="b2602c69:ProjectViewProjectNode" />
-              <item name="water2" type="462c0819:PsiDirectoryNode" />
-              <item name="diandishui" type="462c0819:PsiDirectoryNode" />
-              <item name="lib" type="462c0819:PsiDirectoryNode" />
-              <item name="network" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
       </pane>
       <pane id="PackagesPane" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="android.sdk.path" value="$USER_HOME$/AppData/Local/Android/Sdk" />
     <property name="dart.analysis.tool.window.force.activate" value="false" />
-    <property name="last_opened_file_path" value="E:/environment/flutter sdk/flutter/bin/cache/dart-sdk" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="dart.settings" />
     <property name="show.migrate.to.gradle.popup" value="false" />
   </component>
@@ -216,6 +199,19 @@
         </RuleState>
       </list>
     </option>
+  </component>
+  <component name="RunManager">
+    <configuration name="Unnamed" type="AndroidJUnit" factoryName="Android JUnit" nameIsGenerated="true">
+      <module name="water2" />
+      <option name="MAIN_CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="PARAMETERS" value="" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -243,7 +239,7 @@
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <layout>
       <window_info id="Captures" order="0" weight="0.25" />
-      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.2613941" />
+      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.28485253" />
       <window_info id="Structure" order="2" side_tool="true" />
       <window_info id="Image Layers" order="3" />
       <window_info id="Designer" order="4" />
@@ -251,12 +247,12 @@
       <window_info id="Capture Tool" order="6" />
       <window_info id="Favorites" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="0" />
-      <window_info anchor="bottom" id="TODO" order="1" visible="true" weight="0.21074964" />
+      <window_info anchor="bottom" id="TODO" order="1" weight="0.21388102" />
       <window_info anchor="bottom" id="Terminal" order="2" weight="0.3286119" />
       <window_info anchor="bottom" id="Event Log" order="3" side_tool="true" />
       <window_info anchor="bottom" id="Dart Analysis" order="4" weight="0.3286119" />
       <window_info anchor="bottom" id="Find" order="5" />
-      <window_info anchor="bottom" id="Messages" order="6" weight="0.3286119" />
+      <window_info anchor="bottom" id="Messages" order="6" visible="true" weight="0.26062322" />
       <window_info anchor="right" id="Capture Analysis" order="0" />
       <window_info anchor="right" id="Theme Preview" order="1" />
       <window_info anchor="right" id="Flutter Inspector" order="2" />
@@ -266,37 +262,10 @@
     </layout>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/diandishui/lib/login/login.dart">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3696">
-          <caret line="180" column="18" selection-start-line="180" selection-start-column="18" selection-end-line="180" selection-end-column="18" />
-          <folding>
-            <element signature="e#0#20#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/diandishui/lib/main.dart">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="286">
-          <caret line="15" column="24" selection-start-line="15" selection-start-column="24" selection-end-line="15" selection-end-column="24" />
-          <folding>
-            <element signature="e#0#45#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/diandishui/lib/network/data_model.dart">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="220">
           <caret line="10" column="31" selection-start-line="10" selection-start-column="31" selection-end-line="10" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/diandishui/lib/network/http_config.dart">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="22">
-          <caret line="1" column="21" selection-start-line="1" selection-start-column="21" selection-end-line="1" selection-end-column="21" />
         </state>
       </provider>
     </entry>
@@ -310,10 +279,61 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/diandishui/lib/pages/water/waterPage.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="30" column="49" selection-start-line="30" selection-start-column="49" selection-end-line="30" selection-end-column="49" />
+          <folding>
+            <element signature="e#0#47#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/diandishui/lib/login/login.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="218">
+          <caret line="180" column="18" selection-start-line="180" selection-start-column="18" selection-end-line="180" selection-end-column="18" />
+          <folding>
+            <element signature="e#0#20#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/diandishui/pubspec.lock">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2244" />
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/diandishui/pubspec.yaml">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="82" column="14" lean-forward="true" selection-start-line="82" selection-start-column="14" selection-end-line="82" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/diandishui/lib/pages/service/knowledge/today_new_detail.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#46#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/diandishui/lib/network/http_config.dart">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="22">
-          <caret line="34" column="14" selection-start-line="34" selection-start-column="14" selection-end-line="34" selection-end-column="14" />
+          <caret line="1" column="18" selection-start-line="1" selection-start-column="18" selection-end-line="1" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/diandishui/lib/main.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="15" column="24" selection-start-line="15" selection-start-column="24" selection-end-line="15" selection-end-column="24" />
+          <folding>
+            <element signature="e#0#45#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
