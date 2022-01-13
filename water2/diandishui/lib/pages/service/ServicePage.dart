@@ -59,7 +59,7 @@ class ServicePageState extends State<ServicePage>
         ),
         centerTitle: true,
         bottom: PreferredSize(
-          preferredSize: Size.fromHeight(40),
+          preferredSize: Size.fromHeight(48),
           child: Material(
             color: Colors.white,
             child: TabBar(

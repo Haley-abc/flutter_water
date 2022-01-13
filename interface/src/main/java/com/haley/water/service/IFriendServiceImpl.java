@@ -2,6 +2,7 @@ package com.haley.water.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
 import com.haley.water.dto.FriendDto;
+import com.haley.water.dto.SearchFriendDto;
 import com.haley.water.entity.Friend;
 import com.haley.water.entity.User;
 
@@ -13,7 +14,11 @@ public interface IFriendServiceImpl extends IService<Friend> {
      * @param userId
      * @return
      */
-    List<FriendDto> selectFriend(int userId);
+    List<FriendDto> selectFriendList(int userId);
 
-    FriendDto searchFriend(String phone);
+    FriendDto searchUser(String phone);
+
+    Friend searchFriend(SearchFriendDto searchFriendDto);
+
+    boolean addFriend(Friend friend);
 }
