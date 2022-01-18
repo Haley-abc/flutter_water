@@ -1,3 +1,4 @@
+import 'package:diandishui/global/myInfo.dart';
 import 'package:diandishui/module/effect.dart';
 import 'package:diandishui/module/text.dart';
 import 'package:diandishui/pages/ranking/rankingView/rankList.dart';
@@ -30,7 +31,7 @@ class RankingPageState extends State<RankingPage> {
                 borderRadius: BorderRadius.circular(150),
                 image: DecorationImage(
                   fit: BoxFit.cover,
-                  image: AssetImage("assets/icon/girl.png"),
+                  image: AssetImage(GlobalData.head),
                 ),
               ),
             ),
