@@ -13,7 +13,6 @@ class RankList extends StatefulWidget {
 }
 
 class _RankListState extends State<RankList> {
-
   List<RankingListModel> rankingList = [];
 
   @override
@@ -23,18 +22,26 @@ class _RankListState extends State<RankList> {
     initData();
   }
 
+  Future<Null> _handleRefresh() async {
+    // 模拟数据的延迟加载
+    await Future.delayed(Duration(seconds: 1), () {
+      setState(() {
+        initData();
+      });
+    });
+  }
+
   Future<void> initData() async {
     HttpRequest.request("$BASE_URL/waterConsumption/dailyList",
-        method: "post",
-        data: {
-          "userId": GlobalData.id,
-          "waterDate": "2021-08-17"
-        }).then((value) {
+            method: "post",
+            data: {"userId": GlobalData.id, "waterDate": "2021-08-17"})
+        .then((value) {
       if (value.data["code"] == 200) {
         List<RankingListModel> rankinglist2 = [];
         List<dynamic> result = value.data["result"];
         for (var i = 0; i < result.length; i++) {
-          RankingListModel rankingListModel = RankingListModel.formMap(result[i]);
+          RankingListModel rankingListModel =
+              RankingListModel.formMap(result[i]);
           rankinglist2.add(rankingListModel);
         }
         setState(() {
@@ -48,56 +55,61 @@ class _RankListState extends State<RankList> {
 
   @override
   Widget build(BuildContext context) {
-    return ListView.builder(
-      itemCount: rankingList.length,
-      itemBuilder: (context, index) {
-        int num = index+1;
-        return Column(
-          children: <Widget>[
-            ListTile(
-              leading: Container(
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(100),
-                  image: DecorationImage(
-                    fit: BoxFit.cover,
-                    image: AssetImage(rankingList[index].head),
-                  ),
-                ),
-                width: 40.0,
-                height: 40.0,
-              ),
-              title: Container(
-                margin: EdgeInsets.only(left: 15.0),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: <Widget>[
-                    Text(rankingList[index].name),
-                    SizedBox(height: 5.0,),
-                    Text(
-                      rankingList[index].waterConsumption.toString()+" L",
-                      style: TextStyle(fontSize: 13.0, color: Colors.grey),
+    return RefreshIndicator(
+      child: ListView.builder(
+        itemCount: rankingList.length,
+        itemBuilder: (context, index) {
+          int num = index + 1;
+          return Container(
+            margin: EdgeInsets.fromLTRB(0, 8, 0, 0),
+            child: Column(
+              children: <Widget>[
+                ListTile(
+                    leading: Container(
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(100),
+                        image: DecorationImage(
+                          fit: BoxFit.cover,
+                          image: AssetImage(rankingList[index].head),
+                        ),
+                      ),
+                      width: 40.0,
+                      height: 40.0,
                     ),
-                  ],
-                ),
-              ),
-              trailing: Container(
-                width: 40.0,
-                height: 40.0,
-                alignment: Alignment.center,
-                child: Text(
-                  '$num',
-                  style: TextStyle(
-                    fontSize: 25.0
-                  ),
-                ),
-              )
+                    title: Container(
+                      margin: EdgeInsets.only(left: 15.0),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: <Widget>[
+                          Text(rankingList[index].name),
+                          SizedBox(
+                            height: 5.0,
+                          ),
+                          Text(
+                            rankingList[index].waterConsumption.toString() + " L",
+                            style: TextStyle(fontSize: 13.0, color: Colors.grey),
+                          ),
+                        ],
+                      ),
+                    ),
+                    trailing: Container(
+                      width: 40.0,
+                      height: 40.0,
+                      alignment: Alignment.center,
+                      child: Text(
+                        '$num',
+                        style: TextStyle(fontSize: 25.0),
+                      ),
+                    )),
+                Divider(
+                  color: Colors.grey,
+                )
+              ],
             ),
-            Divider(
-              color: Colors.grey,
-            )
-          ],
-        );
-      },
+          );
+        },
+      ),
+      onRefresh: _handleRefresh,
     );
   }
 }

@@ -1,2 +1,0 @@
-const APPBARTITLE = 15.0;
-const HEADPADDING = 11.0;

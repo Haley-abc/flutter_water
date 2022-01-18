@@ -1,3 +1,4 @@
+import 'package:diandishui/global/myInfo.dart';
 import 'package:diandishui/module/color.dart';
 import 'package:diandishui/module/effect.dart';
 import 'package:diandishui/module/text.dart';
@@ -46,7 +47,7 @@ class ServicePageState extends State<ServicePage>
               borderRadius: BorderRadius.circular(150),
               image: DecorationImage(
                 fit: BoxFit.cover,
-                image: AssetImage("assets/icon/girl.png"),
+                image: AssetImage(GlobalData.head),
               ),
             ),
           ),
